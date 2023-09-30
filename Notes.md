@@ -8,7 +8,7 @@ The packages created up 'til now are the following:
 
 Also, I began with the creation of the `Orders` package.
 
-Note that the classes that have been better implemented are the ones in the `Flowers` package. The others still a little bit of work.
+Note that the classes that have been better implemented are the ones in the `Flowers` package. The others still need a little bit of work.
 
 #### REMARKABLE CHANGES
 Even though it wasn't the idea, at the end I designed two more classes than expected for the `Flowers` package. The first one being `CatalogueEntry` and `Range`. `Range` is a small class meant to open the possibility of having values that exist in an interval. `CatalogueEntry` is a class to store the data of every entry in the Catalogue.
