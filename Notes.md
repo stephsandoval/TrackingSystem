@@ -1,6 +1,7 @@
 ## WORK LOG
 
 ### SEPTEMBER 30th, 2023
+#### SUMMARY 
 The packages created up 'til now are the following:
 + `Flowers`
 + `GUI`
@@ -23,3 +24,33 @@ The `equal` method in the `Flower` class has to be reconsidered. Right now it ta
 When doing the comparison, the length of the stem might work as a range. Like in the catalogue. This way, a hybrid tea rose of 5 in and a hybrid tea rose of 7 in would probably be the same, but a hybrid tea rose of 5 in and a hybrid tea rose of 18 in wouldn't.
 
 The other option is: instead of using the stem length, use a category. Like *mini*, *standard*, *premium*, and *jumbo*. Based on the category determine whether two flowers are equal. Also, the Catalogue should be updated to match those catagories.
+
+-------------
+
+### OCTOBER 2nd, 2023
+#### SUMMARY
+Today's work consisted in completing some classes, creating two new ones and updating the previous classes based on the new insight that the new classes provided.
+
+#### REMARKABLE CHANGES
+Below are the changes made to certain classes from the different packages.
+- **`Flowers` Package**:
+  * `Bouquet` : change in the `toString` method.
+  * `CatalogueEntry` : change in the `contain` method. Now, instead of just checking whether the two flowers are "equal", it also verifies the stem length of the flower is in the expected range.
+- **`Orders` Package**:
+  * `Order` : change how the flowers and amounts are stored. It is no longer an `ArrayList` of objects, but an `ArrayList` of `ArrayLists` of objects. The change was done because a single bouquet may contain various flowers; ergo, the need of more than one list.
+  * `Order` : dates will no longer be handled with the `Date` class of `java.util`, but with the `LocalDate` class of `java.time`
+- **`People` package**:
+  * `Client` : change in the `toString` method.
+  * `Employee` : change in the `toString` method.
+
+#### NEW ADDITIONS
+Below are the new classes implemented (listed according to the package they belong to).
+- **`Orders` Package**:
+  * `OrderMaker` : class to prepare the prepackage based on the order of the client.
+- **`Packages` Package**:
+  * `Prepackage` : class that contains the info of the prepackages (bouquets and prices).
+
+#### NOTES FOR FUTURE WORK
+Some issues that have come up with the work developed:
+- Should the `client` contain the `order` or the `order` the `client`? Because, right now, they both include each other. Yet, that seems a little redundant.
+- When the employee takes the order, it should create an `ArrayList` of `ArrayLists` of objects (flowers and amounts) to be compatible with the new formats implemented for the orders.

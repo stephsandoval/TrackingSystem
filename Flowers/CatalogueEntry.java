@@ -47,9 +47,11 @@ public class CatalogueEntry {
         return objectDescription;
     }
 
+    private boolean lengthInRange (float length){
+        return (length >= stemRange.getMinimum()) && (length <= stemRange.getMaximum());
+    }
+
     public boolean contains (Flower newFlower){
-        boolean equalFlower = flower.equalTo(newFlower);
-        System.out.println(equalFlower);
-        return equalFlower;
+        return flower.equalTo(newFlower) && lengthInRange(newFlower.getStemLength());
     }
 }

@@ -66,9 +66,9 @@ public class Bouquet {
 
     public String toString (){
         int index = 0;
-        String objectDescription = "this bouquet contains :";
+        String objectDescription = "bouquet > ";
         for (Flower flower : bouquet){
-            objectDescription += " - " + amounts.get(index++) + " flowers of type " + flower.getType() + " and species " + flower.getSpecies();
+            objectDescription += " - " + amounts.get(index++) + " " + flower.getSpecies() + " " + flower.getType();
         }
         return objectDescription;
     }
@@ -84,7 +84,7 @@ public class Bouquet {
         System.out.println(bouquet.toString());
         bouquet.addFlower(new Flower("carnation", "mini", 5.2f));
         bouquet.addFlower(new Flower("rose", "spray", 8.2f), 6);
-        bouquet.addFlower(new Flower("carnation", "standar", 7.0f), 3, 4, 0);
+        bouquet.addFlower(new Flower("carnation", "standard", 7.0f), 3, 4, 0);
         bouquet.addFlower(new Flower("carnation", "mini", 3.4f), 4);
         System.out.println(bouquet.toString());
     }

@@ -1,3 +1,7 @@
+/* Stephanie Sandoval - Caso 02
+ * Employee class - Holds information related to the employees of the company
+ */
+
 package People;
 
 // import java.util.ArrayList;
@@ -33,6 +37,10 @@ public class Employee {
         // and the other would be removed
 
         // createOrder(...)
+
+        // new note: when the employee takes the order, it should ask for an arraylist of an arraylist of flowers
+        // same for the amounts of every flower (arraylist of an arraylist of integers)
+        // reason: a bouquet may contain more than one flower type, and a client may ask for more than one bouquet
         scan.close();
     }
 
@@ -88,7 +96,7 @@ public class Employee {
     }
 
     public String toString (){
-        return "Employee > " + name + ", id : " + employeeID + ", company : " + company;
+        return "employee > " + name + ", id : " + employeeID + ", company : " + company;
     }
 
     public static void main (String args[]){

@@ -1,3 +1,7 @@
+/* Stephanie Sandoval - Caso 02
+ * Client class - Holds information related to the clients
+ */
+
 package People;
 
 import Orders.Order;
@@ -38,6 +42,6 @@ public class Client {
     }
 
     public String toString (){
-        return "Client > " + name + ", id : " + clientID + ", order " + order.toString();
+        return "client > " + name + ", id : " + clientID + ", order " + order.toString();
     }
 }
