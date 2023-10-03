@@ -1,5 +1,7 @@
 ## WORK LOG
 
+-------------
+
 ### SEPTEMBER 30th, 2023
 #### SUMMARY 
 The packages created up 'til now are the following:
@@ -33,21 +35,21 @@ Today's work consisted in completing some classes, creating two new ones and upd
 
 #### REMARKABLE CHANGES
 Below are the changes made to certain classes from the different packages.
-- **`Flowers` Package**:
+- **Flowers Package**:
   * `Bouquet` : change in the `toString` method.
   * `CatalogueEntry` : change in the `contain` method. Now, instead of just checking whether the two flowers are "equal", it also verifies the stem length of the flower is in the expected range.
-- **`Orders` Package**:
+- **Orders Package**:
   * `Order` : change how the flowers and amounts are stored. It is no longer an `ArrayList` of objects, but an `ArrayList` of `ArrayLists` of objects. The change was done because a single bouquet may contain various flowers; ergo, the need of more than one list.
   * `Order` : dates will no longer be handled with the `Date` class of `java.util`, but with the `LocalDate` class of `java.time`
-- **`People` package**:
+- **People package**:
   * `Client` : change in the `toString` method.
   * `Employee` : change in the `toString` method.
 
 #### NEW ADDITIONS
 Below are the new classes implemented (listed according to the package they belong to).
-- **`Orders` Package**:
+- **Orders Package**:
   * `OrderMaker` : class to prepare the prepackage based on the order of the client.
-- **`Packages` Package**:
+- **Packages Package**:
   * `Prepackage` : class that contains the info of the prepackages (bouquets and prices).
 
 #### NOTES FOR FUTURE WORK
