@@ -1,3 +1,8 @@
+/* Stephanie Sandoval - Caso 02
+ * Prepackage class - Holds information for the prepackages (bouquets and prices)
+ * It is like a mini version of the final package
+ */
+
 package Packages;
 
 import java.util.ArrayList;
