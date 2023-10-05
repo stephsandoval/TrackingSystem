@@ -56,3 +56,44 @@ Below are the new classes implemented (listed according to the package they belo
 Some issues that have come up with the work developed:
 - Should the `client` contain the `order` or the `order` the `client`? Because, right now, they both include each other. Yet, that seems a little redundant.
 - When the employee takes the order, it should create an `ArrayList` of `ArrayLists` of objects (flowers and amounts) to be compatible with the new formats implemented for the orders.
+
+-------------
+
+### OCTOBER 3rd, 2023
+#### SUMMARY
+This day's work consisted in developing two more classes from the `Packages` package. Below is explained what was developed.
+
+#### REMARKABLE CHANGES
+- Added a small header description to the `Prepackage` class at the beginning of the document to have a brief idea of what it does without having to read the whole document.
+
+#### NEW ADDITIONS
+Below are the new classes implemented
+- **Packages Package**:
+  * `Package` : class the contains all the information of whatever the order of the client was. Note that for every client there exists one and only one package. If the user asks for multiple items they are shipped in the same package.
+  * `PackageMaker` : class to prepare the package of the client. Is in charge of asking the other class for the different elements a package must contain to put them in a single object (`Package`).
+
+#### NOTES FOR FUTURE WORK
+- The issues noted in October 2nd still need to be solved.
+- Think about how the objects are going to be registered and where (this information is needed to develop the `recordProcessor`).
+
+-------------
+
+### OCTOBER 4th, 2023
+#### SUMMARY
+This day's work consisted in developing two more classes from the `Packages` package. Below is explained what was developed.
+
+#### REMARKABLE CHANGES
+- Since a package may go through multiple stages during its trip, the category of "event" of `Package` was changed to "events" and is an `ArrayList`. This way, it is possible to have multiple events for a single package.
+
+#### NEW ADDITION
+- **Packages Package**:
+  * `Event` : class the contains the information of single event a package can go through.
+  * `PackageManager` : class to update the available packages. This class is in charge of creating the new events and adding them to the existing objects to update their information. It works closely to the class `RecordProcessor` that will be later developed.
+
+#### NOTES FOR FUTURE WORK
+- The issues noted in October 2nd still need to be solved.
+- Think about how the objects are going to be registered and where (this information is needed to develop the `recordProcessor`).
+- Make a small `main` program to run a small version of the code to show its functionality.
+- The only class needed to finish the second progress of the project is `recordProcessor`. Besides that, there is only the need of make everything work together in a single file for demonstration purposes.
+
+-------------

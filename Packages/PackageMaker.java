@@ -1,13 +1,19 @@
+/* Stephanie Sandoval - Caso 02
+ * Package Maker class - Creates the packages of the order
+ * Creates the final version (the one to be shipped)
+ */
+
 package Packages;
 
 import java.util.ArrayList;
 
+import Events.Event;
 import Orders.Order;
 
 public class PackageMaker {
     private Prepackage prepackage;
     private Package clientPackage;
-    //private Event event;
+    private ArrayList <Event> events;
     private Order order;
 
     public PackageMaker (Order order, Prepackage prepackage){
@@ -32,7 +38,7 @@ public class PackageMaker {
         return this.clientPackage;
     }
 
-    public void addEvent (){
-        // create event and add it to the package events
+    public void addEvent (Event event){
+        this.events.add(event);
     }
 }
