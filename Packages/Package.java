@@ -2,6 +2,8 @@
  * Package class - Holds information of the packages generated
  */
 
+// should the complete attribute exist?
+
 package Packages;
 
 import java.time.LocalDate;
@@ -11,6 +13,7 @@ import Events.Event;
 import Flowers.Bouquet;
 
 public class Package {
+
     private LocalDate dateProcessed, arrivalDate;
     private int clientID, employeeID, packageID;
     private ArrayList <Bouquet> bouquets;

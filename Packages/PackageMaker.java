@@ -31,7 +31,7 @@ public class PackageMaker {
     }
 
     private void createPackage (){
-        this.clientPackage = new Package(order.getDateProcessed(), order.getArrivalDate(), order.getClient().getClientID(), order.getEmployee().getEmployeeID(), prepackage.getBouquets(), order.getArrivalPlace(), "shipping", "FTS", this.calculatePrice(), true);
+        this.clientPackage = new Package(order.getDateProcessed(), order.getArrivalDate(), order.getClient().getClientID(), order.getEmployee().getEmployeeID(), prepackage.getBouquets(), order.getArrivalPlace(), "in process", order.getEmployee().getCompany(), this.calculatePrice(), true);
     }
 
     public Package getPackage (){
