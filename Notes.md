@@ -114,6 +114,7 @@ Day of the second phase of the project. According to the first idea, up to this 
 - `Catalogue`
 - `Bouquet`
 - `Flower`
+
 but always taking into account that no console implementation was going to exist. If a method differs way to much between the GUI and the console version, then it is not fully designed. Yet, the class `Record Processor` was omitted from the final product for this phase (mostly because I am still not sure how or where to keep record of the objects).
 
 Today, the main work was in the main driver program for the testing of this phase.
