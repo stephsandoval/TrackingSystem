@@ -85,15 +85,53 @@ This day's work consisted in developing two more classes from the `Packages` pac
 #### REMARKABLE CHANGES
 - Since a package may go through multiple stages during its trip, the category of "event" of `Package` was changed to "events" and is an `ArrayList`. This way, it is possible to have multiple events for a single package.
 
-#### NEW ADDITION
+#### NEW ADDITIONS
 - **Packages Package**:
   * `Event` : class the contains the information of single event a package can go through.
   * `PackageManager` : class to update the available packages. This class is in charge of creating the new events and adding them to the existing objects to update their information. It works closely to the class `RecordProcessor` that will be later developed.
 
 #### NOTES FOR FUTURE WORK
 - The issues noted in October 2nd still need to be solved.
-- Think about how the objects are going to be registered and where (this information is needed to develop the `recordProcessor`).
+- Think about how the objects are going to be registered and where (this information is needed to develop the `Record Processor`).
 - Make a small `main` program to run a small version of the code to show its functionality.
-- The only class needed to finish the second progress of the project is `recordProcessor`. Besides that, there is only the need of make everything work together in a single file for demonstration purposes.
+- The only class needed to finish the second progress of the project is `Record Processor`. Besides that, there is only the need of make everything work together in a single file for demonstration purposes.
+
+-------------
+
+### OCTOBER 5th, 2023
+#### SUMMARY
+Day of the second phase of the project. According to the first idea, up to this date the completed classes should be:
+- `Package Manager`
+- `Event`
+- `Package Maker`
+- `Record Processor`
+- `Pre Package`
+- `Package`
+- `Order`
+- `Order Maker`
+- `Client`
+- `Employee`
+- `Catalogue`
+- `Bouquet`
+- `Flower`
+but always taking into account that no console implementation was going to exist. If a method differs way to much between the GUI and the console version, then it is not fully designed. Yet, the class `Record Processor` was omitted from the final product for this phase (mostly because I am still not sure how or where to keep record of the objects).
+
+Today, the main work was in the main driver program for the testing of this phase.
+
+#### REMARKABLE CHANGES
+- Cleaned the code a little bit to make it more readable and remove any other main method that still existed in this class. This way, the only `main` in the program belongs to the driver.
+
+#### NEW ADDITIONS
+Today's work included two additions to the project.
+- **Packages Package**
+  * `IDGenerator` : class to generate the ID's to the client and the package. The employee also has an ID attribute, but it is expected for the employee to know it's own ID. Therefore, no need of generating one for that object. The class follows the singleton pattern to make sure there are no duplicates.
+- **General**
+  * `Driver` : contains the `main` method to test the program up 'til today's progress.
+
+#### NOTES FOR FUTURE WORK
+- The issues noted in October 2nd still need to be solved.
+- Think about how the objects are going to be registered and where (this information is needed to develop the `Record Processor`).
+- Still need to work in the `Record Processor`
+- Should `Catalogue` follow the singleton pattern just as `IDGenerator`? Should it even stay as a .CSV file or change to the .JSON?
 
 -------------
