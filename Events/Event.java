@@ -58,7 +58,7 @@ public class Event {
     }
 
     public String toString (){
-        String objectDescription = "event > date > " + date.toString() + " | location > " + location + " | company > " + company + " | description >";
+        String objectDescription = "event >> date > " + date.toString() + " | location > " + location + " | company > " + company + " | description >";
         for (String item : description){
             objectDescription += " - " + item;
         }

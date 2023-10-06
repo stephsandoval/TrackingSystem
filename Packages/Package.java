@@ -7,16 +7,17 @@ package Packages;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import Events.Event;
 import Flowers.Bouquet;
 
 public class Package {
     private LocalDate dateProcessed, arrivalDate;
-    private int clientID, employeeID;
+    private int clientID, employeeID, packageID;
     private ArrayList <Bouquet> bouquets;
     private String arrivalPlace, status, location;
     private ArrayList <String> notes;
     private float price;
-    //private ArrayList <Event> events;
+    private ArrayList <Event> events;
     private boolean complete;
 
     public Package (LocalDate dateProcessed, LocalDate arrivalDate, int clientID, int employeeID, ArrayList <Bouquet> bouquets, String arrivalPlace, String status, String location, float price, boolean complete){
@@ -30,6 +31,13 @@ public class Package {
         this.location = location;
         this.price = price;
         this.complete = complete;
+        this.notes = new ArrayList<>();
+        this.events = new ArrayList<>();
+        generatePackageID();
+    }
+
+    private void generatePackageID (){
+        this.packageID = IDGenerator.getInstance().getNewID();
     }
 
     public LocalDate getDateProcessed (){
@@ -46,6 +54,10 @@ public class Package {
 
     public int getEmployeeID (){
         return this.employeeID;
+    }
+
+    public int getPackageID (){
+        return this.packageID;
     }
 
     public ArrayList <Bouquet> getBouquets (){
@@ -75,11 +87,11 @@ public class Package {
     public ArrayList <String> getNotes (){
         return this.notes;
     }
-/*
+
     public ArrayList <Event> getEvents (){
         return this.events;
     }
-*/
+
     public void setDateProcessed (LocalDate dateProcessed){
         this.dateProcessed = dateProcessed;
     }
@@ -94,6 +106,10 @@ public class Package {
 
     public void setEmployeeID (int employeeID){
         this.employeeID = employeeID;
+    }
+
+    public void setPackageID (int packageID){
+        this.packageID = packageID;
     }
 
     public void setBouquets (ArrayList <Bouquet> bouquets){
@@ -123,34 +139,36 @@ public class Package {
     public void setComplete (boolean complete){
         this.complete = complete;
     }
-/*
+
     public void setEvents (ArrayList <Event> events){
         this.events = events;
     }
-*/
+
 
     public void addNote (String note){
         this.notes.add(note);
     }
-/*
+
     public void addEvent (Event event){
         this.events.add(event);
     }
-*/
 
     public String toString (){
-        String objectDescription = "package >> ";
-        objectDescription += "arrival date > " + arrivalDate.toString() + " | date processed > " + dateProcessed.toString();
-        objectDescription += " | clientID > " + clientID + " | employeeID " + employeeID + " | bouquets > ";
+        String objectDescription = "package >>> ";
+        objectDescription += "\n arrival date > " + arrivalDate.toString() + "\n date processed > " + dateProcessed.toString();
+        objectDescription += "\n clientID > " + clientID + "\n employeeID > " + employeeID + "\n packageID > " + packageID + "\n bouquets >> ";
         for (Bouquet bouquet : bouquets){
             objectDescription += bouquet.toString() + " | ";
         }
-        objectDescription += "arrival place > " + arrivalPlace + " | status > " + status + " | location > " + location;
-        objectDescription += " | price > $" + price + " | complete > " + complete + " | notes > ";
+        objectDescription += "\n arrival place > " + arrivalPlace + "\n status > " + status + "\n location > " + location;
+        objectDescription += "\n price > $" + price + "\n complete > " + complete + "\n notes > ";
         for (String note : notes){
             objectDescription += note + " | ";
         }
-        // missing the event descriptions
+        objectDescription += "\n events >> ";
+        for (Event event : events){
+            objectDescription += event.toString() + " | ";
+        }
         return objectDescription;
     }
 }

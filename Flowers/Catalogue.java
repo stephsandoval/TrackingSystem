@@ -74,11 +74,4 @@ public class Catalogue {
             System.out.println(entry.toString());
         }
     }
-
-    public static void main (String args[]){
-        Catalogue catalogue = new Catalogue();
-        Flower flower = new Flower("rose", "hybrid tea", 9);
-        float price = catalogue.getPrice(flower);
-        System.out.println("The price of the " + flower.toString() + " is $" + price);
-    }
 }

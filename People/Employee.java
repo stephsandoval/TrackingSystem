@@ -4,11 +4,6 @@
 
 package People;
 
-// import java.util.ArrayList;
-// import java.util.Date;
-import java.util.Scanner;
-
-import Flowers.Flower;
 import Orders.Order;
 
 public class Employee {
@@ -24,8 +19,6 @@ public class Employee {
     }
 
     public void takeOrder (){
-        Scanner scan = new Scanner(System.in);
-        takeFlowers(scan);
 
         // should call the createOrder here
         // but first the employee needs to get the information from the user
@@ -41,9 +34,12 @@ public class Employee {
         // new note: when the employee takes the order, it should ask for an arraylist of an arraylist of flowers
         // same for the amounts of every flower (arraylist of an arraylist of integers)
         // reason: a bouquet may contain more than one flower type, and a client may ask for more than one bouquet
-        scan.close();
+
+        // when taking the order and creating the client's id, refer to the IDGenerator of the Package class
+        // this way, the ID will not be repeated
     }
 
+    /*
     private Flower takeFlowers (Scanner scan){
         Flower flower;
         String type, species;
@@ -61,7 +57,7 @@ public class Employee {
 
         return flower;
     }
-/*
+
     private void createOrder (ArrayList <Flower> flowers, ArrayList <Integer> amounts, String arrivalPlace, Date arrivalDate, Date dateProcessed, Client client){
         order = new Order(flowers, amounts, arrivalPlace, arrivalDate, dateProcessed, client, this);
     }
@@ -97,10 +93,5 @@ public class Employee {
 
     public String toString (){
         return "employee > " + name + ", id : " + employeeID + ", company : " + company;
-    }
-
-    public static void main (String args[]){
-        Employee employee = new Employee("Aaron", 00001110, "Flower Company");
-        employee.takeOrder();
     }
 }

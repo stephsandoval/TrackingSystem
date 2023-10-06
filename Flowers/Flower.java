@@ -46,11 +46,13 @@ public class Flower {
     }
 
     public String toString (){
-        return "flower > type : " + this.type + ", species : " + this.species + ", stemLength : " + stemLength;
+        return "flower >> type : " + this.type + ", species : " + this.species + ", stemLength : " + stemLength;
     }
 
     public boolean equalTo (Object object){
         // a flower is considered equal to another if their type and species are the same
+        // should the stem length be considered too?
+        
         if (this == object){
             return true;
         }

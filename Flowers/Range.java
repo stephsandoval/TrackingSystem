@@ -29,6 +29,6 @@ public class Range {
     }
 
     public String toString (){
-        return "range > [" + this.minimum + " , " + this.maximum + "]";
+        return "range >> [" + this.minimum + " , " + this.maximum + "]";
     }
 }

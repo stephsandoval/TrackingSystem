@@ -35,11 +35,11 @@ public class Prepackage {
     }
 
     public String toString (){
-        String objectDescription = "prepackage >> bouquets > ";
+        String objectDescription = "prepackage >>> \n bouquets >> ";
         for (Bouquet bouquet : bouquets){
             objectDescription += bouquet.toString() + " | ";
         }
-        objectDescription += ">> prices > ";
+        objectDescription += "\n prices > ";
         for (Float price : prices){
             objectDescription += "$" + price + " | ";
         }

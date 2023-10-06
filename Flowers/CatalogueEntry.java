@@ -41,7 +41,7 @@ public class CatalogueEntry {
     }
 
     public String toString (){
-        String objectDescription = "entry > for the " + flower.toString();
+        String objectDescription = "entry >> for the " + flower.toString();
         objectDescription += " with stem length in " + stemRange.toString();
         objectDescription += " the price is in " + priceRange.toString();
         return objectDescription;

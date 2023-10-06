@@ -30,11 +30,16 @@ public class PackageMaker {
         return totalPrice;
     }
 
-    public void createPackage (){
-        this.clientPackage = new Package(order.getDateProcessed(), order.getArrivalDate(), order.getClient().getClientID(), order.getEmployee().getEmployeeID(), prepackage.getBouquets(), order.getArrivalPlace(), "--", "here", this.calculatePrice(), true);
+    private void createPackage (){
+        this.clientPackage = new Package(order.getDateProcessed(), order.getArrivalDate(), order.getClient().getClientID(), order.getEmployee().getEmployeeID(), prepackage.getBouquets(), order.getArrivalPlace(), "shipping", "FTS", this.calculatePrice(), true);
     }
 
     public Package getPackage (){
+        this.createPackage();
+        ArrayList <String> description = new ArrayList<>();
+        description.add("package created - sent to shipping");
+        Event event = new Event(order.getDateProcessed(), order.getEmployee().getCompany(), order.getEmployee().getCompany(), description);
+        clientPackage.addEvent(event);
         return this.clientPackage;
     }
 
