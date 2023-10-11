@@ -6,12 +6,13 @@ package Orders;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.io.Serializable;
 
 import Flowers.Flower;
 import People.Client;
 import People.Employee;
 
-public class Order {
+public class Order implements Serializable{
     private ArrayList <ArrayList <Flower>> flowers;
     private ArrayList <ArrayList <Integer>> amounts;
     private String arrivalPlace;

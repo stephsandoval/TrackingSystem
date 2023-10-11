@@ -6,10 +6,11 @@
 package Packages;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
 import Flowers.Bouquet;
 
-public class Prepackage {
+public class Prepackage implements Serializable {
     private ArrayList <Bouquet> bouquets;
     private ArrayList <Float> prices;
 

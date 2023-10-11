@@ -3,8 +3,9 @@
  */
 
 package Flowers;
+import java.io.Serializable;
 
-public class Flower {
+public class Flower implements Serializable {
     private String type;
     private String species;
     private float stemLength;

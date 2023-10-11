@@ -10,15 +10,18 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import Events.Event;
+import Records.RecordProcessor;
 
 public class PackageManager {
     private int packageID;
     private Package clientPackage;
-    //private RecordProcessor recordProcessor;
+    private RecordProcessor recordProcessor;
     private Event event;
 
-    public PackageManager (int packageID){
-        this.packageID = packageID;
+    public PackageManager (Package clientPackage){
+        this.clientPackage = clientPackage;
+        this.packageID = clientPackage.getPackageID();
+        this.recordProcessor = new RecordProcessor();
     }
 
     private void createEvent (LocalDate date, String location, String company, ArrayList <String> description){
@@ -26,9 +29,16 @@ public class PackageManager {
     }
 
     public void updateObject (LocalDate date, String location, String company, ArrayList <String> description){
+        if (recordProcessor.hasRecord(packageID)){
+            clientPackage = getObject(packageID);
+        }
         createEvent(date, location, company, description);
-        // recordProcessor.getObject (something)
-        // recordProcessor.updateObject (something)
+        clientPackage.addEvent(event);
+        recordProcessor.updateObject (clientPackage);
+    }
+
+    public Package getObject (int packageID){
+        return recordProcessor.getObject(packageID);
     }
 
     public int getPackageID (){
@@ -38,12 +48,6 @@ public class PackageManager {
     public Package getPackage (){
         return this.clientPackage;
     }
-
-    /* the processor will probably work as some "static" method to reference it just one time
-    public RecordProcessor getProcessor (){
-        return this.recordProcessor
-    }
-    */
 
     public void setPackageID (int packageID){
         this.packageID = packageID;

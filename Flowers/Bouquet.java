@@ -5,8 +5,9 @@
 package Flowers;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Bouquet {
+public class Bouquet implements Serializable{
     private ArrayList<Flower> bouquet; // one entry per different flower
     private ArrayList<Integer> amounts; // amount of each different flower - same order as bouquet
 

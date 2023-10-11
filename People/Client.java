@@ -4,17 +4,15 @@
 
 package People;
 
-import Orders.Order;
+import java.io.Serializable;
 
-public class Client {
+public class Client implements Serializable{
     private String name;
     private int clientID;
-    private Order order;
 
-    public Client (String name, int clientID, Order order){
+    public Client (String name, int clientID){
         this.name = name;
         this.clientID = clientID;
-        this.order = order;
     }
 
     public String getName (){
@@ -25,10 +23,6 @@ public class Client {
         return this.clientID;
     }
 
-    public Order getOrder (){
-        return this.order;
-    }
-
     public void setName (String name){
         this.name = name;
     }
@@ -37,11 +31,7 @@ public class Client {
         this.clientID = clientID;
     }
 
-    public void setOrder (Order order){
-        this.order = order;
-    }
-
     public String toString (){
-        return "client > " + name + ", id : " + clientID + ", order " + order.toString();
+        return "client >> name > " + name + " | id > " + clientID;
     }
 }

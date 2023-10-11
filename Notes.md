@@ -136,3 +136,26 @@ Today's work included two additions to the project.
 - Should `Catalogue` follow the singleton pattern just as `IDGenerator`? Should it even stay as a .CSV file or change to the .JSON?
 
 -------------
+
+### OCTOBER 10th, 2023
+#### SUMMARY
+Review of the second phase of the project. Today's work consisted in creating one more class and solving some previous issues.
+
+#### REMARKABLE CHANGES
+- Resolved the problem regarding object serialization. Now the package holds all the information of the client and the employee, instead of just the IDs.
+- Since the client can exist without an order, but the order cannot exist without the client, the order will be the one holding the information of the client. Not viceversa and not both (as it was before).
+- Changes in the `Driver` class to check if the `Package Manager` works with the new class implementations.
+
+#### NEW ADDITIONS
+Below are the new classes implemented
+- **Records**
+  * `RecordProcessor` : class to serialize the objects. For now, it works only with `Packages`. It can update an object (serialize the object) and read an object (deserialize the object).
+
+#### NOTES FOR FUTURE WORK
+- It would be a nice idea to make the `RecordProcessor` class more generic (work with objects and not packages). This way, one can use the same class to serialize other elements, like the `ID Generator`. This might be useful to ensure there are no repeated ID's even if the program is running for the n-th time.
+- It might be a nice idea to leave the `Catalogue` as .CSV. This way, the .JSON would contain the list of values that can be presented in the GUI. Which would allow the possibility of having incomplete packages in case the .JSON and .CSV are not coordinated.
+- Serialization problem : resolved.
+- Order / Client problem : resolved.
+- Record Processor class problem : resolved.
+
+-------------

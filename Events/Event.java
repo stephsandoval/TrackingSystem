@@ -7,8 +7,9 @@ package Events;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Event {
+public class Event implements Serializable{
     private LocalDate date;
     private String location;
     private String company;

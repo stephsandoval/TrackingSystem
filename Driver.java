@@ -46,6 +46,7 @@ import Flowers.Flower;
 import Orders.Order;
 import Orders.OrderMaker;
 import Packages.PackageMaker;
+import Packages.PackageManager;
 import Packages.Prepackage;
 import People.Client;
 import People.Employee;
@@ -83,11 +84,10 @@ public class Driver {
         LocalDate arrivalDate =  LocalDate.of(2023, 10, 10);
         LocalDate dateProcessed = LocalDate.of(2023, 10, 5);
 
-        Client client = new Client("Olaf", IDGenerator.getInstance().getNewID(), null);
+        Client client = new Client("Olaf", IDGenerator.getInstance().getNewID());
         Employee employee = new Employee("Pete", IDGenerator.getInstance().getNewID(), "FTS");
 
         Order order = new Order(orderFlowers, orderAmounts, arrivalPlace, arrivalDate, dateProcessed, client, employee);
-        client.setOrder(order);
         OrderMaker orderMaker = new OrderMaker(order);
 
         Prepackage prepackage = orderMaker.getPrepackage();
@@ -97,6 +97,19 @@ public class Driver {
         Package clientPackage = packageMaker.getPackage();
         clientPackage.addNote("testing the methods");
 
+        ArrayList <String> description = new ArrayList<>();
+        description.add("Trying the object serialization");
+        LocalDate today = LocalDate.of(2023, 10, 10);
+        String location = "Pacific Ocean";
+        String company = "FTS - BOATS";
+
         System.out.println(clientPackage.toString());
+
+        PackageManager packageManager = new PackageManager(clientPackage);
+        packageManager.setPackage(clientPackage);
+        packageManager.updateObject(today, location, company, description);
+
+        Package p = packageManager.getObject(clientPackage.getPackageID());
+        System.out.println("\n\n" + p.toString());
     }
 }

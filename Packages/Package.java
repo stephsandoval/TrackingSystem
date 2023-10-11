@@ -8,14 +8,19 @@ package Packages;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.io.Serializable;
 
 import Events.Event;
 import Flowers.Bouquet;
+import People.Client;
+import People.Employee;
 
-public class Package {
+public class Package implements Serializable {
 
     private LocalDate dateProcessed, arrivalDate;
-    private int clientID, employeeID, packageID;
+    private int packageID;
+    private Client client;
+    private Employee employee;
     private ArrayList <Bouquet> bouquets;
     private String arrivalPlace, status, location;
     private ArrayList <String> notes;
@@ -23,11 +28,11 @@ public class Package {
     private ArrayList <Event> events;
     private boolean complete;
 
-    public Package (LocalDate dateProcessed, LocalDate arrivalDate, int clientID, int employeeID, ArrayList <Bouquet> bouquets, String arrivalPlace, String status, String location, float price, boolean complete){
+    public Package (LocalDate dateProcessed, LocalDate arrivalDate, Client client, Employee employee, ArrayList <Bouquet> bouquets, String arrivalPlace, String status, String location, float price, boolean complete){
         this.dateProcessed = dateProcessed;
         this.arrivalDate = arrivalDate;
-        this.clientID = clientID;
-        this.employeeID = employeeID;
+        this.client = client;
+        this.employee = employee;
         this.bouquets = bouquets;
         this.arrivalPlace = arrivalPlace;
         this.status = status;
@@ -51,12 +56,12 @@ public class Package {
         return this.arrivalDate;
     }
 
-    public int getClientID (){
-        return this.clientID;
+    public Client getClient (){
+        return this.client;
     }
 
-    public int getEmployeeID (){
-        return this.employeeID;
+    public Employee getEmployee (){
+        return this.employee;
     }
 
     public int getPackageID (){
@@ -103,12 +108,12 @@ public class Package {
         this.arrivalDate = arrivalDate;
     }
 
-    public void setClientID (int clientID){
-        this.clientID = clientID;
+    public void setClient (Client client){
+        this.client = client;
     }
 
-    public void setEmployeeID (int employeeID){
-        this.employeeID = employeeID;
+    public void setEmployee (Employee employee){
+        this.employee = employee;
     }
 
     public void setPackageID (int packageID){
@@ -159,7 +164,7 @@ public class Package {
     public String toString (){
         String objectDescription = "package >>> ";
         objectDescription += "\n arrival date > " + arrivalDate.toString() + "\n date processed > " + dateProcessed.toString();
-        objectDescription += "\n clientID > " + clientID + "\n employeeID > " + employeeID + "\n packageID > " + packageID + "\n bouquets >> ";
+        objectDescription += "\n " + client.toString() + "\n " + employee.toString() + "\n packageID > " + packageID + "\n bouquets >> ";
         for (Bouquet bouquet : bouquets){
             objectDescription += bouquet.toString() + " | ";
         }

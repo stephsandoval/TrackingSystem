@@ -5,8 +5,9 @@
 package People;
 
 import Orders.Order;
+import java.io.Serializable;
 
-public class Employee {
+public class Employee implements Serializable{
     private String name;
     private int employeeID;
     private String company;
@@ -92,6 +93,6 @@ public class Employee {
     }
 
     public String toString (){
-        return "employee > " + name + ", id : " + employeeID + ", company : " + company;
+        return "employee >> name > " + name + " | id > " + employeeID + " | company > " + company;
     }
 }
