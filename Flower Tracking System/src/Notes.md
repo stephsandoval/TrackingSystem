@@ -159,3 +159,13 @@ Below are the new classes implemented
 - Record Processor class problem : resolved.
 
 -------------
+
+### OCTOBER 17th, 2023
+#### SUMMARY
+
+#### REMARKABLE CHANGES
+
+#### NEW ADDITIONS
+- **Json** : json for the configuration of the gui.
+
+#### NOTES FOR FUTURE WORK
