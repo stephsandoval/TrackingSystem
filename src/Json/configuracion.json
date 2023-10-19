@@ -1,0 +1,9 @@
+{
+    "species" : ["rose", "carnation", "orchid"],
+    "type" : {
+        "rose" : ["hybrid tea", "spray", "sweetheart"],
+        "carnation" : ["standard", "mini", "hybrid"],
+        "orchid" : ["moth", "dendrobium", "dancing lady"]
+    },
+    "status" : ["in process", "shipping", "loading", "travelling", "damaged", "in location", "on hold"]
+}
