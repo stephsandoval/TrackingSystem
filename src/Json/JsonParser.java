@@ -1,3 +1,8 @@
+/* Stephanie Sandoval - Caso 02
+ * JsonParser - Reads the json file and stores the information
+ * Singleton pattern to avoid reading multiple times
+ */
+
 package Json;
 
 import java.io.FileReader;
@@ -62,7 +67,12 @@ public class JsonParser {
 
     private void createMap (){
         for (String flower : species){
-            types.put(flower, toArray(jsonTypes.getJsonArray(flower)));
+            ArrayList<String> elements = new ArrayList<>();
+            elements = toArray(jsonTypes.getJsonArray(flower));
+            if (elements != null){
+                // make sure the flower species has some type entries in the json
+                types.put(flower, elements);
+            }
         }
     }
 
@@ -79,9 +89,5 @@ public class JsonParser {
             return types.get(species);
         }
         return null;
-    }
-
-    public static void main (String [] args){
-        JsonParser.getInstance();
     }
 }

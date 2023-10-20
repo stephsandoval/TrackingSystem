@@ -1,3 +1,7 @@
+/* Stephanie Sandoval - Caso 02
+ * RecordProcessor - In charge of serializing and deserializing objects
+ */
+
 package Records;
 
 import java.io.File;
