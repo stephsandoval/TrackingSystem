@@ -1,6 +1,8 @@
 package GUI;
 
 import java.awt.FlowLayout;
+import java.util.ArrayList;
+
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 
@@ -38,7 +40,10 @@ public class AddScreen extends MainScreen{
     }
 
     private void showSecondCombo (){
-        String[] roseSpecies = {"hybrid tea", "spray", "sweetheart"};
+        ArrayList<String> roseSpecies = new ArrayList<>();
+        roseSpecies.add("hybrid tea");
+        roseSpecies.add("spray");
+        roseSpecies.add("sweetheart");
         String[] carnationSpecies = {"standard", "mini", "hybrid"};
         String[] orchidSpecies = {"moth", "dendrobium", "dancing lady"};
         String option;
