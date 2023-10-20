@@ -9,11 +9,21 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Catalogue {
+    private static Catalogue instance;
     private ArrayList<CatalogueEntry> entries;
     
-    public Catalogue (){
+    private Catalogue (){
         entries = new ArrayList<>();
         loadCatalogue();
+    }
+
+    public static synchronized Catalogue getInstance (){
+        // only allow one instance of this object
+        // this, to ensure there are no repeated IDs
+        if (instance == null){
+            instance = new Catalogue();
+        }
+        return instance;
     }
 
     private void loadCatalogue (){

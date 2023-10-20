@@ -27,7 +27,7 @@ public class OrderMaker {
         this.order = order;
         this.bouquets = new ArrayList<>();
         this.prices = new ArrayList<>();
-        this.catalogue = new Catalogue();
+        this.catalogue = Catalogue.getInstance();
         processOrder();
         createBouquets();
         calculatePrices();

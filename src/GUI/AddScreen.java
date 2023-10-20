@@ -1,7 +1,6 @@
 package GUI;
 
 import java.awt.FlowLayout;
-import java.util.ArrayList;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
