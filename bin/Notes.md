@@ -160,12 +160,24 @@ Below are the new classes implemented
 
 -------------
 
-### OCTOBER 17th, 2023
+### OCTOBER 20th, 2023
 #### SUMMARY
+Today's work consisted in developing the reader for the json file and changing one of the gui classes to make it work with the reader. Also, some changes were made to the `Catalogue` class.
 
 #### REMARKABLE CHANGES
+- Changed the `Catalogue` class to make it work with the singleton design pattern. This way, it doesn't have to read and load the file multiple times.
 
 #### NEW ADDITIONS
-- **Json** : json for the configuration of the gui.
+Below are the new additions to the code divided by folder.
+- **Jar**
+  * `API` : contains some jar files of some APIs developed to read the json files. This jar files are not my implementation (they come from an external source).
+- **Json**
+ * `Configuracion.json` : json file with the data that has to be included to the GUI. Note: *this was not developed this day, but it is included in this log entry to keep track of it.*
+ * `JsonParser` : class to read the json file. Works with the singleton pattern to avoid loading the file multiple times.
 
 #### NOTES FOR FUTURE WORK
+- Still need to transform the `RecordProcessor` class to make it work with objects instead of packages.
+- The catalogue will remain as a .CSV. If there is some incongruence with the data obtained from the .JSON then the order would be classified as incomplete.
+- Work on the new GUI interface to continue with the project. The biggest part missing has to deal with the information that comes from the windows.
+
+-------------
