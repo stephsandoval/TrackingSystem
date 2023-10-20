@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 
+import Json.JsonParser;
+
 public class AddScreen extends MainScreen{
 
     private JFrame frame;
@@ -40,26 +42,8 @@ public class AddScreen extends MainScreen{
     }
 
     private void showSecondCombo (){
-        ArrayList<String> roseSpecies = new ArrayList<>();
-        roseSpecies.add("hybrid tea");
-        roseSpecies.add("spray");
-        roseSpecies.add("sweetheart");
-        String[] carnationSpecies = {"standard", "mini", "hybrid"};
-        String[] orchidSpecies = {"moth", "dendrobium", "dancing lady"};
-        String option;
-
-        option = (String) flowerCombo.getSelectedItem();
-        switch (option){
-            case "rose":
-                speciesCombo.updateContents(roseSpecies);
-                break;
-            case "carnation":
-                speciesCombo.updateContents(carnationSpecies);
-                break;
-            case "orchid":
-                speciesCombo.updateContents(orchidSpecies);
-                break;
-        }
+        String option = flowerCombo.getSelectedItem().toString();
+        speciesCombo.updateContents(JsonParser.getInstance().getType(option));
     }
 
     private void showThirdCombo (){
