@@ -96,7 +96,7 @@ public class AddScreen extends ScreenChanger implements Initializable{
         return amount > 0;
     }
 
-    private void addToOrder (){
+    public void addToOrder (){
         if (firstFlower){
             species.add(new ArrayList<>());
             types.add(new ArrayList<>());
@@ -119,7 +119,7 @@ public class AddScreen extends ScreenChanger implements Initializable{
         System.out.println(species + "\n\n" + types + "\n\n" + stemLengths + "\n\n" + amounts);
     }
 
-    private void addBouquet (){
+    public void addBouquet (){
         currentBouquet++;
         firstFlower = true;
         showOrder("-------------------------");

@@ -4,7 +4,6 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,7 +21,7 @@
             <Button fx:id="UpdateScreen" layoutX="19.0" layoutY="95.0" mnemonicParsing="false" onAction="#loadUpdateScreen" prefHeight="25.0" prefWidth="84.0" text="UPDATE" />
          </children>
       </Pane>
-      <Pane layoutX="687.0" prefHeight="640.0" prefWidth="332.0">
+      <Pane fx:id="orderPane" layoutX="687.0" prefHeight="640.0" prefWidth="332.0">
          <children>
             <Separator layoutX="-3.0" orientation="VERTICAL" prefHeight="640.0" prefWidth="6.0" />
             <Button fx:id="finishOrderButton" disable="true" layoutX="217.0" layoutY="605.0" mnemonicParsing="false" onAction="#finishOrder" prefHeight="25.0" prefWidth="101.0" text="FINISH ORDER" />
@@ -31,11 +30,6 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <ScrollPane layoutX="20.0" layoutY="88.0" prefHeight="499.0" prefWidth="297.0">
-              <content>
-                <AnchorPane fx:id="orderPane" minHeight="0.0" minWidth="0.0" prefHeight="499.0" prefWidth="300.0" />
-              </content>
-            </ScrollPane>
          </children>
       </Pane>
       <TextField fx:id="screenName" layoutX="140.0" layoutY="134.0" prefHeight="25.0" prefWidth="250.0" />
