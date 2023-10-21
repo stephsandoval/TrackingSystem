@@ -11,45 +11,45 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Screens.HistoryScreen">
    <children>
-      <Pane prefHeight="840.0" prefWidth="122.0">
+      <Pane prefHeight="640.0" prefWidth="122.0">
          <children>
-            <Separator layoutX="119.0" orientation="VERTICAL" prefHeight="840.0" prefWidth="8.0" />
-            <Button layoutX="35.0" layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="HISTORY" />
-            <Button layoutX="35.0" layoutY="801.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="LOGOUT" />
-            <Button layoutX="35.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="ADD" />
-            <Button layoutX="35.0" layoutY="96.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="UPDATE" />
+            <Separator layoutX="119.0" orientation="VERTICAL" prefHeight="640.0" prefWidth="8.0" />
+            <Button fx:id="HistoryScreen" layoutX="35.0" layoutY="154.0" mnemonicParsing="false" onAction="#loadHistoryScreen" prefHeight="25.0" prefWidth="84.0" text="HISTORY" />
+            <Button fx:id="Logout" layoutX="35.0" layoutY="605.0" mnemonicParsing="false" onAction="#loadLogInScreen" prefHeight="25.0" prefWidth="84.0" text="LOGOUT" />
+            <Button fx:id="AddScreen" layoutX="35.0" layoutY="39.0" mnemonicParsing="false" onAction="#loadAddScreen" prefHeight="25.0" prefWidth="84.0" text="ADD" />
+            <Button fx:id="UpdateScreen" layoutX="35.0" layoutY="96.0" mnemonicParsing="false" onAction="#loadUpdateScreen" prefHeight="25.0" prefWidth="84.0" text="UPDATE" />
          </children>
       </Pane>
-      <Pane layoutX="687.0" prefHeight="840.0" prefWidth="332.0">
+      <Pane layoutX="687.0" prefHeight="640.0" prefWidth="332.0">
          <children>
-            <Separator layoutX="-5.0" orientation="VERTICAL" prefHeight="840.0" prefWidth="8.0" />
-            <Label layoutX="21.0" layoutY="31.0" text="PACKAGE PREVIEW">
+            <Separator layoutX="-5.0" orientation="VERTICAL" prefHeight="640.0" prefWidth="8.0" />
+            <Label layoutX="20.0" layoutY="33.0" text="PACKAGE PREVIEW">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <TextField layoutX="136.0" layoutY="127.0" prefHeight="25.0" prefWidth="489.0" />
-      <Label layoutX="136.0" layoutY="20.0" prefHeight="35.0" prefWidth="535.0" text="UPDATE ORDER">
+      <TextField layoutX="136.0" layoutY="128.0" prefHeight="25.0" prefWidth="477.0" />
+      <Label layoutX="136.0" layoutY="35.0" prefHeight="35.0" prefWidth="535.0" text="ORDER HISTORY">
          <font>
-            <Font size="42.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="136.0" layoutY="182.0" text="PRODUCT HISTORY">
+      <Label layoutX="136.0" layoutY="183.0" text="PRODUCT HISTORY">
          <font>
-            <Font size="20.0" />
+            <Font size="14.0" />
          </font>
       </Label>
       <Label layoutX="136.0" layoutY="100.0" text="SEARCH PACKAGE ID" />
-      <Button layoutX="630.0" layoutY="127.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" text="S" />
-      <ScrollPane layoutX="136.0" layoutY="220.0" prefHeight="600.0" prefWidth="535.0">
+      <Button layoutX="626.0" layoutY="128.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" text="S" />
+      <ScrollPane layoutX="136.0" layoutY="220.0" prefHeight="405.0" prefWidth="535.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="599.0" prefWidth="531.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="405.0" prefWidth="531.0">
                <children>
-                  <TableView prefHeight="600.0" prefWidth="535.0">
+                  <TableView prefHeight="405.0" prefWidth="535.0">
                     <columns>
                       <TableColumn prefWidth="77.0" text="DATE" />
                       <TableColumn prefWidth="89.0" text="COMPANY" />

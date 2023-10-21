@@ -10,51 +10,51 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Screens.UpdateScreen">
    <children>
-      <Pane prefHeight="840.0" prefWidth="122.0">
+      <Pane prefHeight="640.0" prefWidth="122.0">
          <children>
-            <Separator layoutX="119.0" orientation="VERTICAL" prefHeight="840.0" prefWidth="8.0" />
-            <Button layoutX="35.0" layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="HISTORY" />
-            <Button layoutX="35.0" layoutY="801.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="LOGOUT" />
-            <Button layoutX="35.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="ADD" />
-            <Button layoutX="35.0" layoutY="96.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="UPDATE" />
+            <Separator layoutX="119.0" orientation="VERTICAL" prefHeight="640.0" prefWidth="8.0" />
+            <Button fx:id="HistoryScreen" layoutX="35.0" layoutY="154.0" mnemonicParsing="false" onAction="#loadHistoryScreen" prefHeight="25.0" prefWidth="84.0" text="HISTORY" />
+            <Button fx:id="Logout" layoutX="35.0" layoutY="605.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="LOGOUT" />
+            <Button fx:id="AddScreen" layoutX="35.0" layoutY="39.0" mnemonicParsing="false" onAction="#loadAddScreen" prefHeight="25.0" prefWidth="84.0" text="ADD" />
+            <Button fx:id="UpdateScreen" layoutX="35.0" layoutY="96.0" mnemonicParsing="false" onAction="#loadUpdateScreen" prefHeight="25.0" prefWidth="84.0" text="UPDATE" />
          </children>
       </Pane>
-      <Pane layoutX="687.0" prefHeight="840.0" prefWidth="332.0">
+      <Pane layoutX="687.0" prefHeight="640.0" prefWidth="332.0">
          <children>
-            <Separator layoutX="-5.0" orientation="VERTICAL" prefHeight="840.0" prefWidth="8.0" />
-            <Button layoutX="205.0" layoutY="801.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="FINISH UPDATE" />
-            <Label layoutX="21.0" layoutY="31.0" text="PACKAGE PREVIEW">
+            <Separator layoutX="-5.0" orientation="VERTICAL" prefHeight="640.0" prefWidth="8.0" />
+            <Button layoutX="217.0" layoutY="601.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="FINISH UPDATE" />
+            <Label layoutX="20.0" layoutY="33.0" text="PACKAGE PREVIEW">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <TextField layoutX="136.0" layoutY="127.0" prefHeight="25.0" prefWidth="489.0" />
-      <Label layoutX="136.0" layoutY="20.0" prefHeight="35.0" prefWidth="535.0" text="UPDATE ORDER">
+      <TextField layoutX="136.0" layoutY="128.0" prefHeight="25.0" prefWidth="477.0" />
+      <Label layoutX="136.0" layoutY="35.0" prefHeight="35.0" prefWidth="535.0" text="UPDATE ORDER">
          <font>
-            <Font size="42.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="136.0" layoutY="182.0" text="ADD EVENT">
+      <Label layoutX="136.0" layoutY="183.0" text="ADD EVENT">
          <font>
-            <Font size="20.0" />
+            <Font size="14.0" />
          </font>
       </Label>
       <Label layoutX="136.0" layoutY="100.0" text="SEARCH PACKAGE ID" />
-      <Button layoutX="630.0" layoutY="127.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" text="S" />
-      <Label layoutX="136.0" layoutY="220.0" text="DATE" />
-      <TextField layoutX="136.0" layoutY="315.0" prefHeight="25.0" prefWidth="489.0" />
-      <Label layoutX="136.0" layoutY="288.0" text="COMPANY" />
-      <TextField layoutX="136.0" layoutY="387.0" prefHeight="25.0" prefWidth="489.0" />
-      <Label layoutX="136.0" layoutY="360.0" text="LOCATION" />
-      <TextField layoutX="136.0" layoutY="455.0" prefHeight="25.0" prefWidth="489.0" />
-      <Label layoutX="136.0" layoutY="428.0" text="STATUS" />
-      <DatePicker layoutX="136.0" layoutY="246.0" prefHeight="25.0" prefWidth="489.0" />
-      <Label layoutX="136.0" layoutY="497.0" text="DESCRIPTION" />
-      <TextArea layoutX="136.0" layoutY="526.0" prefHeight="200.0" prefWidth="489.0" />
-      <Button layoutX="496.0" layoutY="747.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" text="ADD DESCRIPTION" />
+      <Button layoutX="626.0" layoutY="128.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" text="S" />
+      <Label layoutX="136.0" layoutY="209.0" text="DATE" />
+      <TextField layoutX="425.0" layoutY="235.0" prefHeight="25.0" prefWidth="239.0" />
+      <Label layoutX="425.0" layoutY="209.0" text="COMPANY" />
+      <TextField layoutX="136.0" layoutY="295.0" prefHeight="25.0" prefWidth="239.0" />
+      <Label layoutX="136.0" layoutY="273.0" text="LOCATION" />
+      <TextField layoutX="425.0" layoutY="295.0" prefHeight="25.0" prefWidth="239.0" />
+      <Label layoutX="425.0" layoutY="273.0" text="STATUS" />
+      <DatePicker layoutX="136.0" layoutY="235.0" prefHeight="25.0" prefWidth="239.0" />
+      <Label layoutX="137.0" layoutY="333.0" text="DESCRIPTION" />
+      <TextArea layoutX="136.0" layoutY="357.0" prefHeight="200.0" prefWidth="528.0" />
+      <Button layoutX="538.0" layoutY="601.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" text="ADD DESCRIPTION" />
    </children>
 </AnchorPane>

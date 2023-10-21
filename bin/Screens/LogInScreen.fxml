@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Screens.LogInScreen">
    <children>
       <Label layoutX="52.0" layoutY="54.0" text="FLOWER TRACKING SYSTEM">
          <font>
@@ -27,6 +26,6 @@
             <Font size="10.0" />
          </font>
       </Label>
-      <Button layoutX="213.0" layoutY="250.0" mnemonicParsing="false" text="LOG IN" />
+      <Button fx:id="LogIn" layoutX="213.0" layoutY="250.0" mnemonicParsing="false" onAction="#loadAddScreen" text="LOG IN" />
    </children>
 </AnchorPane>
