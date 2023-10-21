@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,13 +16,13 @@
       <Pane prefHeight="640.0" prefWidth="122.0">
          <children>
             <Separator layoutX="119.0" orientation="VERTICAL" prefHeight="640.0" prefWidth="6.0" />
-            <Button fx:id="HistoryScreen" layoutX="35.0" layoutY="154.0" mnemonicParsing="false" onAction="#loadHistoryScreen" prefHeight="25.0" prefWidth="84.0" text="HISTORY" />
-            <Button fx:id="Logout" layoutX="35.0" layoutY="605.0" mnemonicParsing="false" onAction="#loadLogInScreen" prefHeight="25.0" prefWidth="84.0" text="LOGOUT" />
-            <Button fx:id="AddScreen" layoutX="35.0" layoutY="39.0" mnemonicParsing="false" onAction="#loadAddScreen" prefHeight="25.0" prefWidth="84.0" text="ADD" />
-            <Button fx:id="UpdateScreen" layoutX="35.0" layoutY="96.0" mnemonicParsing="false" onAction="#loadUpdateScreen" prefHeight="25.0" prefWidth="84.0" text="UPDATE" />
+            <Button fx:id="HistoryScreen" layoutX="19.0" layoutY="155.0" mnemonicParsing="false" onAction="#loadHistoryScreen" prefHeight="25.0" prefWidth="84.0" text="HISTORY" />
+            <Button fx:id="Logout" layoutX="19.0" layoutY="605.0" mnemonicParsing="false" onAction="#loadLogInScreen" prefHeight="25.0" prefWidth="84.0" text="LOGOUT" />
+            <Button fx:id="AddScreen" layoutX="19.0" layoutY="39.0" mnemonicParsing="false" onAction="#loadAddScreen" prefHeight="25.0" prefWidth="84.0" text="ADD" />
+            <Button fx:id="UpdateScreen" layoutX="19.0" layoutY="95.0" mnemonicParsing="false" onAction="#loadUpdateScreen" prefHeight="25.0" prefWidth="84.0" text="UPDATE" />
          </children>
       </Pane>
-      <Pane fx:id="orderPane" layoutX="687.0" prefHeight="640.0" prefWidth="332.0">
+      <Pane layoutX="687.0" prefHeight="640.0" prefWidth="332.0">
          <children>
             <Separator layoutX="-3.0" orientation="VERTICAL" prefHeight="640.0" prefWidth="6.0" />
             <Button fx:id="finishOrderButton" disable="true" layoutX="217.0" layoutY="605.0" mnemonicParsing="false" onAction="#finishOrder" prefHeight="25.0" prefWidth="101.0" text="FINISH ORDER" />
@@ -30,15 +31,20 @@
                   <Font size="20.0" />
                </font>
             </Label>
+            <ScrollPane layoutX="20.0" layoutY="88.0" prefHeight="499.0" prefWidth="297.0">
+              <content>
+                <AnchorPane fx:id="orderPane" minHeight="0.0" minWidth="0.0" prefHeight="499.0" prefWidth="300.0" />
+              </content>
+            </ScrollPane>
          </children>
       </Pane>
       <TextField fx:id="screenName" layoutX="140.0" layoutY="134.0" prefHeight="25.0" prefWidth="250.0" />
-      <Label layoutX="138.0" layoutY="32.0" prefHeight="35.0" prefWidth="535.0" text="ADD ORDER">
+      <Label layoutX="145.0" layoutY="33.0" prefHeight="35.0" prefWidth="535.0" text="ADD ORDER">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="136.0" layoutY="75.0" text="CLIENT INFORMATION">
+      <Label layoutX="140.0" layoutY="75.0" text="CLIENT INFORMATION">
          <font>
             <Font size="14.0" />
          </font>
@@ -56,7 +62,7 @@
          </font>
       </Label>
       <Separator layoutX="122.0" layoutY="253.0" prefHeight="6.0" prefWidth="567.0" />
-      <Button fx:id="newBouquetButton" disable="true" layoutX="133.0" layoutY="605.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="NEW BOUQUET" />
+      <Button fx:id="newBouquetButton" disable="true" layoutX="133.0" layoutY="605.0" mnemonicParsing="false" onAction="#addBouquet" prefHeight="25.0" prefWidth="101.0" text="NEW BOUQUET" />
       <Label layoutX="140.0" layoutY="306.0" text="SPECIES" />
       <ChoiceBox fx:id="screenSpecies" layoutX="140.0" layoutY="335.0" prefHeight="25.0" prefWidth="250.0" />
       <Label fx:id="typeLabel" disable="true" layoutX="138.0" layoutY="372.0" text="TYPE" />
