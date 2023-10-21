@@ -2,6 +2,7 @@ package Screens;
 
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import Json.JsonParser;
@@ -13,6 +14,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 
 public class AddScreen extends ScreenChanger implements Initializable{
     
@@ -26,14 +28,24 @@ public class AddScreen extends ScreenChanger implements Initializable{
     private Label typeLabel, stemLengthLabel, amountLabel;
     @FXML
     private Button addFlowerButton, newBouquetButton, finishOrderButton;
+    @FXML
+    private Pane orderPane;
 
     private String clientName, arrivalPlace;
     private LocalDate arrivalDate;
+
     private JsonParser items = JsonParser.getInstance();
+    private int currentBouquet = 0;
+    private boolean firstFlower = true;
+
+    private ArrayList <ArrayList <String>> species = new ArrayList<>();
+    private ArrayList <ArrayList <String>> types = new ArrayList<>();
+    private ArrayList <ArrayList <Integer>> amounts = new ArrayList<>();
+    private ArrayList <ArrayList <Float>> stemLengths = new ArrayList<>();
 
     public void finishOrder (ActionEvent event){
         clientName = screenName.getText();
-        arrivalDate = screenDate.getValue();
+        arrivalDate = screenDate.getValue(); 
         arrivalPlace = screenPlace.getText();
     }
 
@@ -82,6 +94,21 @@ public class AddScreen extends ScreenChanger implements Initializable{
 
     private boolean validateAmount (int amount){
         return amount > 0;
+    }
+
+    public void addToOrder (){
+        if (firstFlower){
+            species.add(new ArrayList<>());
+            types.add(new ArrayList<>());
+            stemLengths.add(new ArrayList<>());
+            amounts.add(new ArrayList<>());
+            firstFlower = false;
+        }
+        species.get(currentBouquet).add(screenSpecies.getValue());
+        types.get(currentBouquet).add(screenType.getValue());
+        stemLengths.get(currentBouquet).add(Float.valueOf(screenStemLength.getText()));
+        amounts.get(currentBouquet).add(Integer.valueOf(screenAmount.getText()));
+        System.out.println(species + "\n\n" + types + "\n\n" + stemLengths + "\n\n" + amounts);
     }
 
     /* 

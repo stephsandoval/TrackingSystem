@@ -21,7 +21,7 @@
             <Button fx:id="UpdateScreen" layoutX="35.0" layoutY="96.0" mnemonicParsing="false" onAction="#loadUpdateScreen" prefHeight="25.0" prefWidth="84.0" text="UPDATE" />
          </children>
       </Pane>
-      <Pane layoutX="687.0" prefHeight="640.0" prefWidth="332.0">
+      <Pane fx:id="orderPane" layoutX="687.0" prefHeight="640.0" prefWidth="332.0">
          <children>
             <Separator layoutX="-3.0" orientation="VERTICAL" prefHeight="640.0" prefWidth="6.0" />
             <Button fx:id="finishOrderButton" disable="true" layoutX="217.0" layoutY="605.0" mnemonicParsing="false" onAction="#finishOrder" prefHeight="25.0" prefWidth="101.0" text="FINISH ORDER" />
@@ -65,6 +65,6 @@
       <TextField fx:id="screenStemLength" disable="true" layoutX="423.0" layoutY="335.0" prefHeight="25.0" prefWidth="250.0" />
       <Label fx:id="amountLabel" disable="true" layoutX="422.0" layoutY="372.0" text="AMOUNT" />
       <TextField fx:id="screenAmount" disable="true" layoutX="422.0" layoutY="395.0" prefHeight="25.0" prefWidth="250.0" />
-      <Button fx:id="addFlowerButton" disable="true" layoutX="572.0" layoutY="605.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="ADD FLOWER" />
+      <Button fx:id="addFlowerButton" disable="true" layoutX="572.0" layoutY="605.0" mnemonicParsing="false" onAction="#addToOrder" prefHeight="25.0" prefWidth="101.0" text="ADD FLOWER" />
    </children>
 </AnchorPane>
