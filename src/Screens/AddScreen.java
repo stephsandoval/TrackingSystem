@@ -37,7 +37,7 @@ public class AddScreen extends ScreenChanger implements Initializable{
     private JsonParser items = JsonParser.getInstance();
     private int currentBouquet = 0;
     private boolean firstFlower = true;
-    private int x = 5, y = 5;
+    private int x = 20, y = 102;
 
     private ArrayList <ArrayList <String>> species = new ArrayList<>();
     private ArrayList <ArrayList <String>> types = new ArrayList<>();
