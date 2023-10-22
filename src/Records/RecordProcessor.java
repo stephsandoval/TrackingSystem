@@ -32,7 +32,7 @@ public class RecordProcessor {
     }
 
     public void updateObject (Package clientPackage){
-        filename = Integer.toString(clientPackage.getPackageID()) + ".txt";
+        filename = Integer.toString(clientPackage.getPackageID()) + ".fts";
 
         try {
             FileOutputStream file = new FileOutputStream(filename);
@@ -47,7 +47,7 @@ public class RecordProcessor {
 
     public Package getObject (int packageID){
         Package clientPackage = null;
-        filename = Integer.toString(packageID) + ".txt";
+        filename = Integer.toString(packageID) + ".fts";
 
         try {
             FileInputStream file = new FileInputStream(filename);
