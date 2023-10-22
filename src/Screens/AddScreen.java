@@ -157,6 +157,8 @@ public class AddScreen extends ScreenChanger implements Initializable{
     }
 
     private void clearScreen (){
+        screenDate.setValue(null);
+        screenType.setValue(null);
         screenName.clear();
         screenPlace.clear();
     }

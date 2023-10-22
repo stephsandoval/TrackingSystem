@@ -18,7 +18,6 @@ public class AddController {
     public AddController (AddScreen screen){
         this.screen = screen;
         callCreators();
-        System.out.println(packageMaker.getPackage());
     }
 
     private void callCreators (){

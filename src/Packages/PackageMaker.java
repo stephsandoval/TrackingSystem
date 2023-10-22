@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import Events.Event;
 import Orders.Order;
+import Records.RecordProcessor;
 
 public class PackageMaker {
     private Prepackage prepackage;
@@ -21,6 +22,7 @@ public class PackageMaker {
         this.prepackage = prepackage;
         this.order = order;
         this.complete = complete;
+        createPackage();
     }
 
     private float calculatePrice (){
@@ -33,15 +35,15 @@ public class PackageMaker {
     }
 
     private void createPackage (){
-        this.clientPackage = new Package(order.getDateProcessed(), order.getArrivalDate(), order.getClient(), order.getEmployee(), prepackage.getBouquets(), order.getArrivalPlace(), "in process", order.getEmployee().getCompany(), this.calculatePrice(), complete);
-    }
-
-    public Package getPackage (){
-        this.createPackage();
+        clientPackage = new Package(order.getDateProcessed(), order.getArrivalDate(), order.getClient(), order.getEmployee(), prepackage.getBouquets(), order.getArrivalPlace(), "in process", order.getEmployee().getCompany(), this.calculatePrice(), complete);
         ArrayList <String> description = new ArrayList<>();
         description.add("package created - sent to shipping");
         Event event = new Event(order.getDateProcessed(), order.getEmployee().getCompany(), order.getEmployee().getCompany(), description);
         clientPackage.addEvent(event);
+        new RecordProcessor().saveObject(clientPackage);
+    }
+
+    public Package getPackage (){
         return this.clientPackage;
     }
 

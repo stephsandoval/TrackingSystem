@@ -34,7 +34,7 @@ public class PackageManager {
         }
         createEvent(date, location, company, description);
         clientPackage.addEvent(event);
-        recordProcessor.updateObject (clientPackage);
+        recordProcessor.saveObject(clientPackage);
     }
 
     public Package getObject (int packageID){

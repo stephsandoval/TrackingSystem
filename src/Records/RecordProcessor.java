@@ -31,7 +31,7 @@ public class RecordProcessor {
         return this.filename;
     }
 
-    public void updateObject (Package clientPackage){
+    public void saveObject (Package clientPackage){
         filename = Integer.toString(clientPackage.getPackageID()) + ".fts";
 
         try {
