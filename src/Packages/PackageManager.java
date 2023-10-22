@@ -18,9 +18,7 @@ public class PackageManager {
     private RecordProcessor recordProcessor;
     private Event event;
 
-    public PackageManager (Package clientPackage){
-        this.clientPackage = clientPackage;
-        this.packageID = clientPackage.getPackageID();
+    public PackageManager (){
         this.recordProcessor = new RecordProcessor();
     }
 

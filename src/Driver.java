@@ -109,7 +109,7 @@ public class Driver {
 
         System.out.println(clientPackage.toString());
 
-        PackageManager packageManager = new PackageManager(clientPackage);
+        PackageManager packageManager = new PackageManager();
         packageManager.setPackage(clientPackage);
         packageManager.updateObject(today, location, company, description);
 

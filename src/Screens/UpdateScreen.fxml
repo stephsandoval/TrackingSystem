@@ -21,10 +21,10 @@
             <Button fx:id="UpdateScreen" layoutX="19.0" layoutY="96.0" mnemonicParsing="false" onAction="#loadUpdateScreen" prefHeight="25.0" prefWidth="84.0" text="UPDATE" />
          </children>
       </Pane>
-      <Pane layoutX="687.0" prefHeight="640.0" prefWidth="332.0">
+      <Pane fx:id="packagePreview" layoutX="687.0" prefHeight="640.0" prefWidth="332.0">
          <children>
             <Separator layoutX="-5.0" orientation="VERTICAL" prefHeight="640.0" prefWidth="8.0" />
-            <Button fx:id="finishUpdateButton" layoutX="217.0" layoutY="601.0" mnemonicParsing="false" onAction="#finishUpdate" prefHeight="25.0" prefWidth="101.0" text="FINISH UPDATE" />
+            <Button fx:id="finishUpdateButton" disable="true" layoutX="217.0" layoutY="601.0" mnemonicParsing="false" onAction="#finishUpdate" prefHeight="25.0" prefWidth="101.0" text="FINISH UPDATE" />
             <Label layoutX="20.0" layoutY="33.0" text="PACKAGE PREVIEW">
                <font>
                   <Font size="20.0" />
@@ -46,15 +46,15 @@
       <Label layoutX="136.0" layoutY="100.0" text="SEARCH PACKAGE ID" />
       <Button fx:id="searchButton" layoutX="626.0" layoutY="128.0" mnemonicParsing="false" onAction="#searchID" prefHeight="25.0" prefWidth="38.0" text="S" />
       <Label layoutX="136.0" layoutY="209.0" text="DATE" />
-      <TextField fx:id="screenCompany" layoutX="425.0" layoutY="235.0" prefHeight="25.0" prefWidth="239.0" />
+      <TextField fx:id="screenCompany" disable="true" layoutX="425.0" layoutY="235.0" prefHeight="25.0" prefWidth="239.0" />
       <Label layoutX="425.0" layoutY="209.0" text="COMPANY" />
-      <TextField fx:id="screenLocation" layoutX="136.0" layoutY="295.0" prefHeight="25.0" prefWidth="239.0" />
+      <TextField fx:id="screenLocation" disable="true" layoutX="136.0" layoutY="295.0" prefHeight="25.0" prefWidth="239.0" />
       <Label layoutX="136.0" layoutY="273.0" text="LOCATION" />
       <Label layoutX="425.0" layoutY="273.0" text="STATUS" />
-      <DatePicker fx:id="screenDate" layoutX="136.0" layoutY="235.0" prefHeight="25.0" prefWidth="239.0" />
+      <DatePicker fx:id="screenDate" disable="true" layoutX="136.0" layoutY="235.0" prefHeight="25.0" prefWidth="239.0" />
       <Label layoutX="137.0" layoutY="333.0" text="DESCRIPTION" />
-      <Button fx:id="addDescriptionButton" layoutX="535.0" layoutY="401.0" mnemonicParsing="false" onAction="#addDescription" prefHeight="25.0" prefWidth="129.0" text="ADD DESCRIPTION" />
-      <ChoiceBox fx:id="screenStatus" layoutX="425.0" layoutY="295.0" prefHeight="25.0" prefWidth="239.0" />
-      <TextField fx:id="screenDescription" layoutX="137.0" layoutY="359.0" prefHeight="25.0" prefWidth="527.0" />
+      <Button fx:id="addDescriptionButton" disable="true" layoutX="535.0" layoutY="401.0" mnemonicParsing="false" onAction="#addDescription" prefHeight="25.0" prefWidth="129.0" text="ADD DESCRIPTION" />
+      <ChoiceBox fx:id="screenStatus" disable="true" layoutX="425.0" layoutY="295.0" prefHeight="25.0" prefWidth="239.0" />
+      <TextField fx:id="screenDescription" disable="true" layoutX="137.0" layoutY="359.0" prefHeight="25.0" prefWidth="527.0" />
    </children>
 </AnchorPane>

@@ -7,7 +7,7 @@ public class FTSAlert extends Alert{
     private static FTSAlert instance;
 
     private FTSAlert (){
-        super(AlertType.NONE);
+        super(AlertType.INFORMATION);
     }
 
     public static synchronized FTSAlert getInstance (){

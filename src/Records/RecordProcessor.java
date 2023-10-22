@@ -63,7 +63,7 @@ public class RecordProcessor {
     }
 
     public boolean hasRecord (int packageID) {
-        filename = Integer.toString(packageID) + ".txt";
+        filename = Integer.toString(packageID) + ".fts";
         File file = new File(filename);
         return file.exists();
     }

@@ -45,11 +45,9 @@
       </Label>
       <Label layoutX="145.0" layoutY="102.0" text="NAME" />
       <Label layoutX="141.0" layoutY="170.0" text="ARRIVAL PLACE" />
-      <TextField fx:id="screenPlace" layoutX="140.0" layoutY="201.0" prefHeight="25.0" prefWidth="250.0" />
+      <TextField fx:id="screenPlace" layoutX="140.0" layoutY="201.0" prefHeight="25.0" prefWidth="535.0" />
       <Label layoutX="423.0" layoutY="102.0" text="ARRIVAL DATE" />
       <DatePicker fx:id="screenDate" layoutX="422.0" layoutY="134.0" prefHeight="25.0" prefWidth="250.0" />
-      <Label layoutX="422.0" layoutY="170.0" text="SOMETHING" />
-      <TextField layoutX="422.0" layoutY="201.0" prefHeight="25.0" prefWidth="250.0" />
       <Label layoutX="140.0" layoutY="272.0" text="BOUQUETS">
          <font>
             <Font size="14.0" />

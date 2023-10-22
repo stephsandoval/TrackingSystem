@@ -13,7 +13,6 @@ public class AddController {
     private AddScreen screen;
     private Employee employee;
     private OrderMaker orderMaker;
-    private PackageMaker packageMaker;
 
     public AddController (AddScreen screen){
         this.screen = screen;
@@ -36,6 +35,6 @@ public class AddController {
     }
 
     private void callPackageMaker (){
-        packageMaker = new PackageMaker(employee.getOrder(), orderMaker.getPrepackage(), orderMaker.isComplete());
+        new PackageMaker(employee.getOrder(), orderMaker.getPrepackage(), orderMaker.isComplete());
     }
 }
