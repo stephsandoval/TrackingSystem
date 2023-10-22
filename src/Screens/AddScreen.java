@@ -117,7 +117,6 @@ public class AddScreen extends ScreenChanger implements Initializable{
     }
 
     public void finishOrder (ActionEvent event){
-        // before finishing order, check the client input
         clientName = screenName.getText();
         arrivalDate = screenDate.getValue(); 
         arrivalPlace = screenPlace.getText();
@@ -166,15 +165,4 @@ public class AddScreen extends ScreenChanger implements Initializable{
         screenAmount.clear();
         screenStemLength.clear();
     }
-
-    /* 
-    private boolean validDate (){
-        LocalDate today = LocalDate.now();
-        if (today.isAfter(arrivalDate)){
-            return false; // not valid
-        }
-        return true;
-    }
-        
-    */
 }
