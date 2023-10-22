@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import Controllers.AddController;
+import Flowers.PreFlower;
 import Json.JsonParser;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -39,15 +41,14 @@ public class AddScreen extends ScreenChanger implements Initializable{
     private boolean firstFlower = true;
     private int x = 20, y = 102;
 
-    private ArrayList <ArrayList <String>> species = new ArrayList<>();
-    private ArrayList <ArrayList <String>> types = new ArrayList<>();
-    private ArrayList <ArrayList <Integer>> amounts = new ArrayList<>();
-    private ArrayList <ArrayList <Float>> stemLengths = new ArrayList<>();
+    private ArrayList <ArrayList <PreFlower>> userSelection = new ArrayList<>();
 
     public void finishOrder (ActionEvent event){
         clientName = screenName.getText();
         arrivalDate = screenDate.getValue(); 
         arrivalPlace = screenPlace.getText();
+        clearScreen();
+        new AddController(this);
     }
 
     @Override
@@ -98,10 +99,7 @@ public class AddScreen extends ScreenChanger implements Initializable{
 
     public void addToOrder (){
         if (firstFlower){
-            species.add(new ArrayList<>());
-            types.add(new ArrayList<>());
-            stemLengths.add(new ArrayList<>());
-            amounts.add(new ArrayList<>());
+            userSelection.add(new ArrayList<>());
             firstFlower = false;
         }
         String orderSpecies = screenSpecies.getValue();
@@ -109,14 +107,9 @@ public class AddScreen extends ScreenChanger implements Initializable{
         String stemLength = screenStemLength.getText();
         String amount = screenAmount.getText();
 
-        species.get(currentBouquet).add(orderSpecies);
-        types.get(currentBouquet).add(type);
-        stemLengths.get(currentBouquet).add(Float.valueOf(stemLength));
-        amounts.get(currentBouquet).add(Integer.valueOf(amount));
+        userSelection.get(currentBouquet).add(new PreFlower(orderSpecies, type, Float.valueOf(stemLength), Integer.valueOf(amount)));
 
         showOrder(orderSpecies, type, stemLength, amount);
-
-        System.out.println(species + "\n\n" + types + "\n\n" + stemLengths + "\n\n" + amounts);
     }
 
     public void addBouquet (){
@@ -153,20 +146,15 @@ public class AddScreen extends ScreenChanger implements Initializable{
         return this.arrivalDate;
     }
 
-    public ArrayList <ArrayList <String>> getSpecies (){
-        return this.species;
+    public ArrayList <ArrayList <PreFlower>> getUserSelection (){
+        return this.userSelection;
     }
 
-    public ArrayList <ArrayList <String>> getTypes (){
-        return this.types;
-    }
-
-    public ArrayList <ArrayList <Float>> getStemLengths (){
-        return this.stemLengths;
-    }
-
-    public ArrayList <ArrayList <Integer>> getAmounts (){
-        return this.amounts;
+    private void clearScreen (){
+        screenName.clear();
+        screenPlace.clear();
+        screenAmount.clear();
+        screenStemLength.clear();
     }
 
     /* 

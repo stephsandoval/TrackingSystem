@@ -12,22 +12,43 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import Flowers.Flower;
+import Flowers.PreFlower;
 
 public class Employee implements Serializable{
+
     private String name;
     private int employeeID;
     private String company;
     private Order order;
 
+    private ArrayList <ArrayList <Flower>> flowers;
+    private ArrayList <ArrayList <Integer>> amounts;
+
     public Employee (String name, int employeeID, String company){
         this.name = name;
         this.employeeID = employeeID;
         this.company = company;
+        this.flowers = new ArrayList<>();
+        this.amounts = new ArrayList<>();
     }
 
-    public void takeOrder (ArrayList <ArrayList <Flower>> flowers, ArrayList <ArrayList <Integer>> amounts, String arrivalPlace, LocalDate arrivalDate, LocalDate dateProcessed, String clientName){
+    public void takeOrder (ArrayList <ArrayList <PreFlower>> userSelection, String arrivalPlace, LocalDate arrivalDate, LocalDate dateProcessed, String clientName){
         Client client = createClient(clientName);
+        interpretUserSelection(userSelection);
         order = new Order(flowers, amounts, arrivalPlace, arrivalDate, dateProcessed, client, this);
+    }
+
+    private void interpretUserSelection (ArrayList <ArrayList <PreFlower>> userSelection){
+        int currentBouquet = 0;
+        for (ArrayList <PreFlower> userBouquet : userSelection){
+            flowers.add(new ArrayList<>());
+            amounts.add(new ArrayList<>());
+            for (PreFlower flower : userBouquet){
+                flowers.get(currentBouquet).add(new Flower(flower.getSpecies(), flower.getType(), flower.getStemLength()));
+                amounts.get(currentBouquet).add(flower.getAmount());
+            }
+            currentBouquet++;
+        }
     }
 
     private Client createClient (String name){

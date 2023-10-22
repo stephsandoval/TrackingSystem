@@ -7,13 +7,17 @@ package Flowers;
 import java.util.ArrayList;
 import java.io.Serializable;
 
-public class Bouquet implements Serializable{
+public class Bouquet implements Serializable {
+
     private ArrayList<Flower> bouquet; // one entry per different flower
     private ArrayList<Integer> amounts; // amount of each different flower - same order as bouquet
 
     public Bouquet (ArrayList<Flower> flowers, ArrayList<Integer> amounts){
-        this.bouquet = flowers;
-        this.amounts = amounts;
+        this.bouquet = new ArrayList<>();
+        this.amounts = new ArrayList<>();
+        for (Flower flower : flowers){
+            addFlower(flower, amounts.get(flowers.indexOf(flower)));
+        }
     }
 
     public ArrayList<Flower> getBouquet (){

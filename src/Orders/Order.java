@@ -85,4 +85,8 @@ public class Order implements Serializable{
     public void setEmployee (Employee employee){
         this.employee = employee;
     }
+
+    public String toString (){
+        return ("order > " + flowers + " | " + amounts + " | " + arrivalPlace + " | " + arrivalDate + " | " + dateProcessed + " | " + client);
+    }
 }

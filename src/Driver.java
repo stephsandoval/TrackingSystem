@@ -58,18 +58,22 @@ public class Driver {
     public static void main (String args[]){
         ArrayList <Flower> bouquet1 = new ArrayList <Flower> ();
         bouquet1.add(new Flower("rose", "hybrid tea", 34));
-        bouquet1.add(new Flower("carnation", "standard", 32));
+        bouquet1.add(new Flower("rose", "spray", 32));
+        bouquet1.add(new Flower("rose", "sweetheart", 32));
 
         ArrayList <Integer> bouquet1Amounts = new ArrayList<>();
         bouquet1Amounts.add(6);
         bouquet1Amounts.add(6);
+        bouquet1Amounts.add(6);
 
         ArrayList <Flower> bouquet2 = new ArrayList <Flower> ();
-        bouquet2.add(new Flower("rose", "sweetheart", 8));
-        bouquet2.add(new Flower("rose", "sweetheart", 9));
+        bouquet2.add(new Flower("carnation", "standard", 8));
+        bouquet2.add(new Flower("carnation", "mini", 9));
+        bouquet2.add(new Flower("carnation", "hybrid", 9));
 
         ArrayList <Integer> bouquet2Amounts = new ArrayList<>();
         bouquet2Amounts.add(8);
+        bouquet2Amounts.add(4);
         bouquet2Amounts.add(4);
 
         ArrayList <ArrayList <Flower>> orderFlowers = new ArrayList<>();

@@ -29,7 +29,7 @@ public class Catalogue {
     private void loadCatalogue (){
         Scanner scan = null;
         try {
-            scan = new Scanner(new File("C:\\Users\\Stephanie\\OneDrive - Estudiantes ITCR\\Semestre II\\Programación Orientada a Objetos\\Caso 02\\Flower Tracking System\\Flowers\\catalogue.csv"));
+            scan = new Scanner(new File("C:\\Users\\Stephanie\\OneDrive - Estudiantes ITCR\\Semestre II\\Programación Orientada a Objetos\\Caso 02\\Flower Tracking System\\src\\Flowers\\catalogue.csv"));
         } catch (Exception e) {}
         scan.useDelimiter("\n"); // read up to the new line character
         scan.next(); // skip header line
@@ -51,7 +51,7 @@ public class Catalogue {
         float flowerPrice;
         int flowerIndex = indexOf(flower);
         if (flowerIndex == -1){
-            return -1;
+            return 0;
         }
         CatalogueEntry flowerEntry = entries.get(flowerIndex);
         flowerPrice = calculatePrice(flower, flowerEntry);
