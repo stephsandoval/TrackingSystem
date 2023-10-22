@@ -15,10 +15,12 @@ public class PackageMaker {
     private Package clientPackage;
     private ArrayList <Event> events;
     private Order order;
+    private boolean complete;
 
-    public PackageMaker (Order order, Prepackage prepackage){
+    public PackageMaker (Order order, Prepackage prepackage, boolean complete){
         this.prepackage = prepackage;
         this.order = order;
+        this.complete = complete;
     }
 
     private float calculatePrice (){
@@ -31,7 +33,7 @@ public class PackageMaker {
     }
 
     private void createPackage (){
-        this.clientPackage = new Package(order.getDateProcessed(), order.getArrivalDate(), order.getClient(), order.getEmployee(), prepackage.getBouquets(), order.getArrivalPlace(), "in process", order.getEmployee().getCompany(), this.calculatePrice(), true);
+        this.clientPackage = new Package(order.getDateProcessed(), order.getArrivalDate(), order.getClient(), order.getEmployee(), prepackage.getBouquets(), order.getArrivalPlace(), "in process", order.getEmployee().getCompany(), this.calculatePrice(), complete);
     }
 
     public Package getPackage (){

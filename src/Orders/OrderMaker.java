@@ -22,11 +22,15 @@ public class OrderMaker {
 
     private ArrayList <ArrayList <Flower>> flowers;
     private ArrayList <ArrayList <Integer>> amounts;
+    private ArrayList <ArrayList <Flower>> availableFlowers;
+    private ArrayList <ArrayList <Integer>> availableAmounts;
 
     public OrderMaker (Order order){
         this.order = order;
         this.bouquets = new ArrayList<>();
         this.prices = new ArrayList<>();
+        this.availableFlowers = new ArrayList<>();
+        this.availableAmounts = new ArrayList<>();
         this.catalogue = Catalogue.getInstance();
         processOrder();
         createBouquets();
@@ -42,10 +46,27 @@ public class OrderMaker {
     
     private void createBouquets (){
         Bouquet newBouquet;
-        for (ArrayList <Flower> flower : flowers){
-            newBouquet = new Bouquet(flower, amounts.get(flowers.indexOf(flower)));
+        for (ArrayList <Flower> flowerList : flowers){
+            ArrayList <Integer> amountList = amounts.get(flowers.indexOf(flowerList));
+            checkFlowers(flowerList, amountList);
+        }
+        for (ArrayList <Flower> flowers : availableFlowers){
+            newBouquet = new Bouquet(availableFlowers.get(availableFlowers.indexOf(flowers)), availableAmounts.get(availableFlowers.indexOf(flowers)));
             bouquets.add(newBouquet);
         }
+    }
+
+    private void checkFlowers (ArrayList <Flower> flowerList, ArrayList <Integer> amountList){
+        ArrayList <Flower> available = new ArrayList<>();
+        ArrayList <Integer> availableAmount = new ArrayList<>();
+        for (Flower flower : flowerList){
+            if (catalogue.contains(flower)){
+                available.add(flower);
+                availableAmount.add(amountList.get(flowerList.indexOf(flower)));
+            }
+        }
+        availableFlowers.add(available);
+        availableAmounts.add(availableAmount);
     }
 
     private void calculatePrices (){
@@ -69,5 +90,9 @@ public class OrderMaker {
     public Prepackage getPrepackage (){
         createPrepackage();
         return this.prepackage;
+    }
+
+    public boolean isComplete (){
+        return (flowers.size() == availableFlowers.size());
     }
 }

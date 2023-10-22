@@ -79,6 +79,13 @@ public class Catalogue {
         return -1;
     }
 
+    public boolean contains (Flower flower){
+        if (indexOf(flower) == -1){
+            return false;
+        }
+        return true;
+    }
+
     public void printCatalogue (){
         for (CatalogueEntry entry : entries){
             System.out.println(entry.toString());

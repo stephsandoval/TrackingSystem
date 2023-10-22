@@ -97,7 +97,7 @@ public class Driver {
         Prepackage prepackage = orderMaker.getPrepackage();
         System.out.println(prepackage.toString() + "\n\n");
 
-        PackageMaker packageMaker = new PackageMaker(order, prepackage);
+        PackageMaker packageMaker = new PackageMaker(order, prepackage, orderMaker.isComplete());
         Package clientPackage = packageMaker.getPackage();
         clientPackage.addNote("testing the methods");
 

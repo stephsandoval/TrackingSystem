@@ -37,6 +37,6 @@ public class AddController {
     }
 
     private void callPackageMaker (){
-        packageMaker = new PackageMaker(employee.getOrder(), orderMaker.getPrepackage());
+        packageMaker = new PackageMaker(employee.getOrder(), orderMaker.getPrepackage(), orderMaker.isComplete());
     }
 }
