@@ -43,14 +43,6 @@ public class AddScreen extends ScreenChanger implements Initializable{
 
     private ArrayList <ArrayList <PreFlower>> userSelection = new ArrayList<>();
 
-    public void finishOrder (ActionEvent event){
-        clientName = screenName.getText();
-        arrivalDate = screenDate.getValue(); 
-        arrivalPlace = screenPlace.getText();
-        clearScreen();
-        new AddController(this);
-    }
-
     @Override
     public void initialize (URL location, ResourceBundle resources) {
         screenSpecies.getItems().setAll(items.getSpecies());
@@ -61,6 +53,7 @@ public class AddScreen extends ScreenChanger implements Initializable{
     }
 
     private void initializeType (ActionEvent event){
+        clearFlowers();
         String species = screenSpecies.getValue();
         typeLabel.setDisable(false);
         screenType.setDisable(false);
@@ -68,6 +61,7 @@ public class AddScreen extends ScreenChanger implements Initializable{
     }
 
     private void initializeStemLength (ActionEvent event){
+        clearFlowers();
         stemLengthLabel.setDisable(false);
         screenStemLength.setDisable(false);
     }
@@ -108,14 +102,27 @@ public class AddScreen extends ScreenChanger implements Initializable{
         String amount = screenAmount.getText();
 
         userSelection.get(currentBouquet).add(new PreFlower(orderSpecies, type, Float.valueOf(stemLength), Integer.valueOf(amount)));
-
         showOrder(orderSpecies, type, stemLength, amount);
+        clearFlowers();
+        screenStemLength.setDisable(true);
+        screenAmount.setDisable(true);
     }
 
     public void addBouquet (){
-        currentBouquet++;
-        firstFlower = true;
-        showOrder("-------------------------");
+        if (!firstFlower){
+            currentBouquet++;
+            firstFlower = true;
+            showOrder("-------------------------");
+        }
+    }
+
+    public void finishOrder (ActionEvent event){
+        // before finishing order, check the client input
+        clientName = screenName.getText();
+        arrivalDate = screenDate.getValue(); 
+        arrivalPlace = screenPlace.getText();
+        clearScreen();
+        new AddController(this);
     }
 
     private void showOrder (String species, String type, String stemLength, String amount){
@@ -153,6 +160,9 @@ public class AddScreen extends ScreenChanger implements Initializable{
     private void clearScreen (){
         screenName.clear();
         screenPlace.clear();
+    }
+
+    private void clearFlowers (){
         screenAmount.clear();
         screenStemLength.clear();
     }
