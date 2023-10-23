@@ -6,13 +6,19 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import Controllers.UpdateController;
+import Events.Event;
 import Json.JsonParser;
+import Packages.PackagePreview;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 
 public class UpdateScreen extends ScreenChanger implements Initializable {
@@ -24,9 +30,13 @@ public class UpdateScreen extends ScreenChanger implements Initializable {
     @FXML
     private Button addDescriptionButton, finishUpdateButton, searchButton;
     @FXML
+    private TableView <PackagePreview> packageTable;
+    @FXML
     private DatePicker screenDate;
     @FXML
     private Pane packagePreview;
+    @FXML
+    private TableColumn <PackagePreview, String> itemColumn, contentColumn;
 
     private JsonParser items = JsonParser.getInstance();
 
@@ -38,6 +48,8 @@ public class UpdateScreen extends ScreenChanger implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         screenStatus.getItems().setAll(items.getStatus());
+        itemColumn.setCellValueFactory(new PropertyValueFactory<>("item"));
+        contentColumn.setCellValueFactory(new PropertyValueFactory<>("content"));
     }
 
     public void addDescription (){
@@ -71,6 +83,7 @@ public class UpdateScreen extends ScreenChanger implements Initializable {
         controller = new UpdateController(packageID);
         boolean validID = validateID();
         if (validID){
+            populateTable();
             clearFields();
             disactivateFields(false);
         }
@@ -120,5 +133,14 @@ public class UpdateScreen extends ScreenChanger implements Initializable {
         screenCompany.clear();
         screenLocation.clear();
         screenDescription.clear();
+    }
+
+    private void populateTable (){
+        ArrayList <PackagePreview> preview = controller.getPreview();
+        ObservableList <PackagePreview> tableItems = packageTable.getItems();
+        for (PackagePreview itemPreview : preview){
+            tableItems.add(itemPreview);
+        }
+        packageTable.setItems(tableItems);
     }
 }

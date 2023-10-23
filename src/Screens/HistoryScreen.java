@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import Controllers.HistoryController;
 import Events.Event;
+import Packages.PackagePreview;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -24,7 +25,11 @@ public class HistoryScreen extends ScreenChanger implements Initializable {
     @FXML
     private TableView <Event> historyTable;
     @FXML
+    private TableView <PackagePreview> packageTable;
+    @FXML
     private TableColumn <Event, String> dateColumn, companyColumn, locationColumn, statusColumn, descriptionColumn;
+    @FXML
+    private TableColumn <PackagePreview, String> itemColumn, contentColumn;
 
     private HistoryController controller;
 
@@ -70,14 +75,23 @@ public class HistoryScreen extends ScreenChanger implements Initializable {
         locationColumn.setCellValueFactory(new PropertyValueFactory<>("location"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+        itemColumn.setCellValueFactory(new PropertyValueFactory<>("item"));
+        contentColumn.setCellValueFactory(new PropertyValueFactory<>("content"));
     }
 
     private void populateTable (){
         ArrayList <Event> events = controller.getEvents();
+        ArrayList <PackagePreview> preview = controller.getPreview();
+
         ObservableList <Event> tableEvents = historyTable.getItems();
+        ObservableList <PackagePreview> tableItems = packageTable.getItems();
         for (Event event : events) {
             tableEvents.add(event);
         }
+        for (PackagePreview itemPreview : preview){
+            tableItems.add(itemPreview);
+        }
         historyTable.setItems(tableEvents);
+        packageTable.setItems(tableItems);
     }
 }

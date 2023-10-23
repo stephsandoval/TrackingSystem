@@ -32,8 +32,8 @@
             </Label>
             <TableView fx:id="packageTable" layoutX="20.0" layoutY="80.0" prefHeight="495.0" prefWidth="295.0">
               <columns>
-                <TableColumn fx:id="itemColumn" prefWidth="151.0" text="ITEM" />
-                <TableColumn fx:id="contentColumn" prefWidth="143.0" text="CONTENT" />
+                <TableColumn fx:id="itemColumn" editable="false" prefWidth="87.0" resizable="false" text="ITEM" />
+                <TableColumn fx:id="contentColumn" editable="false" prefWidth="207.0" resizable="false" text="CONTENT" />
               </columns>
             </TableView>
          </children>
