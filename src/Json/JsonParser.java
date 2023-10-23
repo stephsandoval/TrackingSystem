@@ -21,10 +21,11 @@ public class JsonParser {
     private static JsonParser instance;
     private JsonArray jsonSpecies, jsonStatus;
     private JsonObject jsonTypes;
-    private HashMap <String, ArrayList<String>> types = new HashMap<>();
-    private ArrayList<String> species, status;
+    private HashMap <String, ArrayList<String>> types;
+    private ArrayList <String> species, status;
 
     private JsonParser (){
+        types = new HashMap<>();
         loadJson ();
         species = toArray(jsonSpecies);
         status = toArray(jsonStatus);
