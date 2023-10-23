@@ -106,12 +106,13 @@ public class Driver {
         LocalDate today = LocalDate.of(2023, 10, 10);
         String location = "Pacific Ocean";
         String company = "FTS - BOATS";
+        String status = "shipping";
 
         System.out.println(clientPackage.toString());
 
         PackageManager packageManager = new PackageManager();
         packageManager.setPackage(clientPackage);
-        packageManager.updateObject(today, location, company, description);
+        packageManager.updateObject(today, location, company, status, description, clientPackage.getPackageID());
 
         Package p = packageManager.getObject(clientPackage.getPackageID());
         System.out.println("\n\n" + p.toString());

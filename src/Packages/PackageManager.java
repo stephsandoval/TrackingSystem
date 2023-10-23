@@ -16,21 +16,15 @@ public class PackageManager {
     private int packageID;
     private Package clientPackage;
     private RecordProcessor recordProcessor;
-    private Event event;
 
     public PackageManager (){
         this.recordProcessor = new RecordProcessor();
     }
 
-    private void createEvent (LocalDate date, String location, String company, ArrayList <String> description){
-        event = new Event(date, location, company, description);
-    }
-
-    public void updateObject (LocalDate date, String location, String company, ArrayList <String> description){
-        if (recordProcessor.hasRecord(packageID)){
-            clientPackage = getObject(packageID);
-        }
-        createEvent(date, location, company, description);
+    public void updateObject (LocalDate date, String location, String company, String status, ArrayList <String> description, int packageID){
+        clientPackage = getObject(packageID);
+        Event event = new Event(date, location, company, status, description);
+        System.out.println(event);
         clientPackage.addEvent(event);
         recordProcessor.saveObject(clientPackage);
     }
@@ -53,9 +47,5 @@ public class PackageManager {
 
     public void setPackage (Package clientPackage){
         this.clientPackage = clientPackage;
-    }
-
-    public void setEvent (Event event){
-        this.event = event;
     }
 }

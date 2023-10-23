@@ -1,6 +1,7 @@
 package Controllers;
 
 import Packages.PackageManager;
+import Screens.FTSAlert;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -26,6 +27,8 @@ public class UpdateController {
     }
 
     public void sendInfo (String location, String company, String status, LocalDate date, ArrayList<String> description){
-        
+        String message = "The package was updated";
+        packageManager.updateObject(date, location, company, status, description, clientPackage.getPackageID());
+        FTSAlert.getInstance().showAlert(message);
     }
 }

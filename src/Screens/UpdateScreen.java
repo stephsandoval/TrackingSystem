@@ -68,7 +68,6 @@ public class UpdateScreen extends ScreenChanger implements Initializable {
             return;
         }
         int packageID = Integer.valueOf(screenPackageID.getText());
-        System.out.println(packageID);
         controller = new UpdateController(packageID);
         boolean validID = validateID();
         if (validID){

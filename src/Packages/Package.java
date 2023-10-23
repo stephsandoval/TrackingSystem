@@ -22,20 +22,19 @@ public class Package implements Serializable {
     private Client client;
     private Employee employee;
     private ArrayList <Bouquet> bouquets;
-    private String arrivalPlace, status, location;
+    private String arrivalPlace, location;
     private ArrayList <String> notes;
     private float price;
     private ArrayList <Event> events;
     private boolean complete;
 
-    public Package (LocalDate dateProcessed, LocalDate arrivalDate, Client client, Employee employee, ArrayList <Bouquet> bouquets, String arrivalPlace, String status, String location, float price, boolean complete){
+    public Package (LocalDate dateProcessed, LocalDate arrivalDate, Client client, Employee employee, ArrayList <Bouquet> bouquets, String arrivalPlace, String location, float price, boolean complete){
         this.dateProcessed = dateProcessed;
         this.arrivalDate = arrivalDate;
         this.client = client;
         this.employee = employee;
         this.bouquets = bouquets;
         this.arrivalPlace = arrivalPlace;
-        this.status = status;
         this.location = location;
         this.price = price;
         this.complete = complete;
@@ -74,10 +73,6 @@ public class Package implements Serializable {
 
     public String getArrivalPlace (){
         return this.arrivalPlace;
-    }
-
-    public String getStatus (){
-        return this.status;
     }
 
     public String getLocation (){
@@ -128,10 +123,6 @@ public class Package implements Serializable {
         this.arrivalPlace = arrivalPlace;
     }
 
-    public void setStatus (String status){
-        this.status = status;
-    }
-
     public void setLocation (String location){
         this.location = location;
     }
@@ -158,6 +149,7 @@ public class Package implements Serializable {
     }
 
     public void addEvent (Event event){
+        System.out.println(events);
         this.events.add(event);
     }
 
@@ -168,7 +160,7 @@ public class Package implements Serializable {
         for (Bouquet bouquet : bouquets){
             objectDescription += bouquet.toString() + " | ";
         }
-        objectDescription += "\n arrival place > " + arrivalPlace + "\n status > " + status + "\n location > " + location;
+        objectDescription += "\n arrival place > " + arrivalPlace + "\n location > " + location;
         objectDescription += "\n price > $" + price + "\n complete > " + complete + "\n notes > ";
         for (String note : notes){
             objectDescription += note + " | ";

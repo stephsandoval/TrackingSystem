@@ -13,12 +13,14 @@ public class Event implements Serializable{
     private LocalDate date;
     private String location;
     private String company;
+    private String status;
     private ArrayList <String> description;
 
-    public Event (LocalDate date, String location, String company, ArrayList <String> description){
+    public Event (LocalDate date, String location, String company, String status, ArrayList <String> description){
         this.date = date;
         this.location = location;
         this.company = company;
+        this.status = status;
         this.description = description;
     }
 
@@ -32,6 +34,10 @@ public class Event implements Serializable{
 
     public String getCompany (){
         return this.company;
+    }
+
+    public String getStatus (){
+        return this.status;
     }
 
     public ArrayList <String> getDescription (){
@@ -50,6 +56,10 @@ public class Event implements Serializable{
         this.company = company;
     }
 
+    public void setStatus (String status){
+        this.status = status;
+    }
+
     public void setDescription (ArrayList <String> description){
         this.description = description;
     }
@@ -59,7 +69,7 @@ public class Event implements Serializable{
     }
 
     public String toString (){
-        String objectDescription = "event >> date > " + date.toString() + " | location > " + location + " | company > " + company + " | description >";
+        String objectDescription = "event >> date > " + date.toString() + " | location > " + location + " | company > " + company + " | status > " + status + " | description >";
         for (String item : description){
             objectDescription += " - " + item;
         }
