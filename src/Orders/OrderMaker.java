@@ -65,8 +65,10 @@ public class OrderMaker {
                 availableAmount.add(amountList.get(flowerList.indexOf(flower)));
             }
         }
-        availableFlowers.add(available);
-        availableAmounts.add(availableAmount);
+        if (available.size() != 0){
+            availableFlowers.add(available);
+            availableAmounts.add(availableAmount);
+        }
     }
 
     private void calculatePrices (){
@@ -93,6 +95,17 @@ public class OrderMaker {
     }
 
     public boolean isComplete (){
-        return (flowers.size() == availableFlowers.size());
+        boolean isComplete = true;
+        for (ArrayList <Flower> bouquet : flowers){
+            if (bouquet.size() != availableFlowers.get(flowers.indexOf(bouquet)).size()){
+                isComplete = false;
+                break;
+            }
+        }
+        return isComplete;
+    }
+
+    public boolean validOrder (){
+        return isComplete() && availableFlowers.size() == 0;
     }
 }

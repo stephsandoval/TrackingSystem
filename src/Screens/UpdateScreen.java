@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import Controllers.UpdateController;
-import Events.Event;
 import Json.JsonParser;
 import Packages.PackagePreview;
 import javafx.collections.ObservableList;

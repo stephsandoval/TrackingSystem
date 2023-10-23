@@ -22,11 +22,13 @@ public class AddController {
     private void callCreators (){
         callEmployee();
         callOrderMaker();
-        callPackageMaker();
+        if (orderMaker.validOrder()){
+            callPackageMaker();
+        }
     }
 
     private void callEmployee (){
-        employee = new Employee("Pete", IDGenerator.getInstance().getNewID(), "FTS");
+        employee = new Employee("Pete", IDGenerator.getInstance().getNewID(), "FTS"); // random employee
         employee.takeOrder(screen.getUserSelection(), screen.getArrivalPlace(), screen.getArrivalDate(), LocalDate.now(), screen.getClientName());
     }
 

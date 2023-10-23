@@ -35,7 +35,7 @@ public class PackageMaker {
     }
 
     private void createPackage (){
-        clientPackage = new Package(order.getDateProcessed(), order.getArrivalDate(), order.getClient(), order.getEmployee(), prepackage.getBouquets(), order.getArrivalPlace(), order.getEmployee().getCompany(), this.calculatePrice(), complete);
+        clientPackage = new Package(order.getDateProcessed(), order.getArrivalDate(), order.getClient(), order.getEmployee(), prepackage.getBouquets(), order.getArrivalPlace(), order.getEmployee().getCompany(), this.calculatePrice(), this.complete);
         ArrayList <String> description = new ArrayList<>();
         description.add("package created - sent to shipping");
         Event event = new Event(order.getDateProcessed(), order.getEmployee().getCompany(), order.getEmployee().getCompany(), "in process", description);
