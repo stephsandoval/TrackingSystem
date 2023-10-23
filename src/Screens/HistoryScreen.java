@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import Controllers.HistoryController;
-import Events.Event;
+import Events.EventPreview;
 import Packages.PackagePreview;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -23,11 +23,11 @@ public class HistoryScreen extends ScreenChanger implements Initializable {
     @FXML
     private Button searchButton;
     @FXML
-    private TableView <Event> historyTable;
+    private TableView <EventPreview> historyTable;
     @FXML
     private TableView <PackagePreview> packageTable;
     @FXML
-    private TableColumn <Event, String> dateColumn, companyColumn, locationColumn, statusColumn, descriptionColumn;
+    private TableColumn <EventPreview, String> dateColumn, companyColumn, locationColumn, statusColumn, descriptionColumn;
     @FXML
     private TableColumn <PackagePreview, String> itemColumn, contentColumn;
 
@@ -80,12 +80,12 @@ public class HistoryScreen extends ScreenChanger implements Initializable {
     }
 
     private void populateTable (){
-        ArrayList <Event> events = controller.getEvents();
+        ArrayList <EventPreview> events = controller.getEvents();
         ArrayList <PackagePreview> preview = controller.getPreview();
 
-        ObservableList <Event> tableEvents = historyTable.getItems();
+        ObservableList <EventPreview> tableEvents = historyTable.getItems();
         ObservableList <PackagePreview> tableItems = packageTable.getItems();
-        for (Event event : events) {
+        for (EventPreview event : events) {
             tableEvents.add(event);
         }
         for (PackagePreview itemPreview : preview){

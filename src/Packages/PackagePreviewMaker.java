@@ -3,6 +3,7 @@ package Packages;
 import java.util.ArrayList;
 
 import Events.Event;
+import Flowers.Bouquet;
 
 public class PackagePreviewMaker {
  
@@ -19,9 +20,9 @@ public class PackagePreviewMaker {
         preview.add(new PackagePreview("date processed", clientPackage.getDateProcessed().toString()));
         preview.add(new PackagePreview("arrival date", clientPackage.getArrivalDate().toString()));
         preview.add(new PackagePreview("package id", Integer.toString(clientPackage.getPackageID())));
-        preview.add(new PackagePreview("client",clientPackage.getClient().toString()));
-        preview.add(new PackagePreview("employee", clientPackage.getEmployee().toString()));
-        preview.add(new PackagePreview("bouquets", clientPackage.getBouquets().toString()));
+        addClient();
+        addEmployee();
+        addBouquet();
         preview.add(new PackagePreview("arrival place", clientPackage.getArrivalPlace()));
         preview.add(new PackagePreview("location", clientPackage.getLocation()));
         addNote();
@@ -38,5 +39,23 @@ public class PackagePreviewMaker {
         for (String note : notes){
             preview.add(new PackagePreview("note", note));
         }
+    }
+
+    private void addBouquet (){
+        ArrayList <Bouquet> bouquets = clientPackage.getBouquets();
+        for (Bouquet bouquet : bouquets){
+            preview.add(new PackagePreview("bouquet", bouquet.toString()));
+        }
+    }
+
+    private void addClient (){
+        preview.add(new PackagePreview("client name", clientPackage.getClient().getName()));
+        preview.add(new PackagePreview(" > id", Integer.toString(clientPackage.getClient().getClientID())));
+    }
+
+    private void addEmployee (){
+        preview.add(new PackagePreview("employee name", clientPackage.getEmployee().getName()));
+        preview.add(new PackagePreview(" > company", clientPackage.getEmployee().getCompany()));
+        preview.add(new PackagePreview(" > id", Integer.toString(clientPackage.getEmployee().getEmployeeID())));
     }
 }

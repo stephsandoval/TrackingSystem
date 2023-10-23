@@ -85,10 +85,4 @@ public class Catalogue {
         }
         return true;
     }
-
-    public void printCatalogue (){
-        for (CatalogueEntry entry : entries){
-            System.out.println(entry.toString());
-        }
-    }
 }

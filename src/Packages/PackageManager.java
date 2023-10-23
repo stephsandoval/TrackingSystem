@@ -24,7 +24,6 @@ public class PackageManager {
     public void updateObject (LocalDate date, String location, String company, String status, ArrayList <String> description, int packageID){
         clientPackage = getObject(packageID);
         Event event = new Event(date, location, company, status, description);
-        System.out.println(event);
         clientPackage.addEvent(event);
         recordProcessor.saveObject(clientPackage);
     }

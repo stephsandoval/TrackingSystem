@@ -71,7 +71,7 @@ public class Bouquet implements Serializable {
 
     public String toString (){
         int index = 0;
-        String objectDescription = "bouquet > ";
+        String objectDescription = "";
         for (Flower flower : bouquet){
             objectDescription += " - " + amounts.get(index++) + " " + flower.getSpecies() + " " + flower.getType();
         }

@@ -46,8 +46,4 @@ public class UserRecord {
         }
         return false;
     }
-
-    public static void main (String[] args){
-        System.out.println(UserRecord.getInstance().hasUser("ftssandoval", 1234));
-    }
 }

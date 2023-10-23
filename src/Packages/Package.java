@@ -149,7 +149,6 @@ public class Package implements Serializable {
     }
 
     public void addEvent (Event event){
-        System.out.println(events);
         this.events.add(event);
     }
 
