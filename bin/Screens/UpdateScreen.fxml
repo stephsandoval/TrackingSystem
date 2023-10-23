@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Screens.UpdateScreen">
+   <children>
+      <Pane prefHeight="640.0" prefWidth="122.0">
+         <children>
+            <Separator layoutX="119.0" orientation="VERTICAL" prefHeight="640.0" prefWidth="8.0" />
+            <Button fx:id="HistoryScreen" layoutX="19.0" layoutY="154.0" mnemonicParsing="false" onAction="#loadHistoryScreen" prefHeight="25.0" prefWidth="84.0" text="HISTORY" />
+            <Button fx:id="Logout" layoutX="19.0" layoutY="605.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="LOGOUT" />
+            <Button fx:id="AddScreen" layoutX="19.0" layoutY="39.0" mnemonicParsing="false" onAction="#loadAddScreen" prefHeight="25.0" prefWidth="84.0" text="ADD" />
+            <Button fx:id="UpdateScreen" layoutX="19.0" layoutY="96.0" mnemonicParsing="false" onAction="#loadUpdateScreen" prefHeight="25.0" prefWidth="84.0" text="UPDATE" />
+         </children>
+      </Pane>
+      <Pane fx:id="packagePreview" layoutX="687.0" prefHeight="640.0" prefWidth="332.0">
+         <children>
+            <Separator layoutX="-5.0" orientation="VERTICAL" prefHeight="640.0" prefWidth="8.0" />
+            <Button fx:id="finishUpdateButton" disable="true" layoutX="217.0" layoutY="601.0" mnemonicParsing="false" onAction="#finishUpdate" prefHeight="25.0" prefWidth="101.0" text="FINISH UPDATE" />
+            <Label layoutX="20.0" layoutY="33.0" text="PACKAGE PREVIEW">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TableView fx:id="packageTable" layoutX="20.0" layoutY="80.0" prefHeight="495.0" prefWidth="295.0">
+              <columns>
+                <TableColumn fx:id="itemColumn" prefWidth="87.0" text="ITEM" />
+                <TableColumn fx:id="contentColumn" prefWidth="232.0" text="CONTENT" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <TextField fx:id="screenPackageID" layoutX="136.0" layoutY="128.0" prefHeight="25.0" prefWidth="477.0" />
+      <Label layoutX="136.0" layoutY="35.0" prefHeight="35.0" prefWidth="535.0" text="UPDATE ORDER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="136.0" layoutY="183.0" text="ADD EVENT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="136.0" layoutY="100.0" text="SEARCH PACKAGE ID" />
+      <Button fx:id="searchButton" layoutX="626.0" layoutY="128.0" mnemonicParsing="false" onAction="#searchID" prefHeight="25.0" prefWidth="38.0" text="S" />
+      <Label layoutX="136.0" layoutY="209.0" text="DATE" />
+      <TextField fx:id="screenCompany" disable="true" layoutX="425.0" layoutY="235.0" prefHeight="25.0" prefWidth="239.0" />
+      <Label layoutX="425.0" layoutY="209.0" text="COMPANY" />
+      <TextField fx:id="screenLocation" disable="true" layoutX="136.0" layoutY="295.0" prefHeight="25.0" prefWidth="239.0" />
+      <Label layoutX="136.0" layoutY="273.0" text="LOCATION" />
+      <Label layoutX="425.0" layoutY="273.0" text="STATUS" />
+      <DatePicker fx:id="screenDate" disable="true" layoutX="136.0" layoutY="235.0" prefHeight="25.0" prefWidth="239.0" />
+      <Label layoutX="137.0" layoutY="333.0" text="DESCRIPTION" />
+      <Button fx:id="addDescriptionButton" disable="true" layoutX="535.0" layoutY="401.0" mnemonicParsing="false" onAction="#addDescription" prefHeight="25.0" prefWidth="129.0" text="ADD DESCRIPTION" />
+      <ChoiceBox fx:id="screenStatus" disable="true" layoutX="425.0" layoutY="295.0" prefHeight="25.0" prefWidth="239.0" />
+      <TextField fx:id="screenDescription" disable="true" layoutX="137.0" layoutY="359.0" prefHeight="25.0" prefWidth="527.0" />
+   </children>
+</AnchorPane>
